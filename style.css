@@ -1,64 +1,63 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  --light: rgb(242, 242, 247);
-  --dark: rgb(28, 28, 30);
-  background-color: white;
-  color: var(--dark);
-}
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    --light: rgb(242, 242, 247);
+    --dark: rgb(28, 28, 30);
+    background-color: white;
+    color: var(--dark);
 
-body {
-  overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: max-content;
+    margin: auto;
+
+    overflow: hidden;
 }
 
 h1 {
-  margin-top: 70px;
-}
-
-#container {
-  margin-left: 25%;
-  margin-right: 25%;
-}
-
-#header {
-  text-align: center;
-  font-size: 4.5em;
+    text-align: center;
+    font-size: 8em;
+    margin: 3rem;
 }
 
 #icons {
-  width: 21em;
-  margin: -3em auto auto auto;
-  display: flex;
-  justify-content: center;
-  background: var(--light);
-  border-radius: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    background: var(--light);
+    border-radius: 2.5em;
 }
 
 svg {
-  margin: 1.5em;
-  height: 7em;
-  width: 7em;
-  fill: var(--dark);
-  outline-style: none;
+    margin: 1.5em;
+    height: 7em;
+    width: 7em;
+    fill: var(--dark);
+    outline-style: none;
 }
 
 svg:hover {
-  fill: rgb(99, 99, 102);
+    fill: rgb(99, 99, 102);
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--dark);
-    color: var(--light);
-  }
-  svg {
-    fill: var(--dark);
-  }
-  svg:hover {
-    fill: rgb(174, 174, 178);
-  }
-  #icons {
-    background: var(--light);
-  }
+    body {
+        background-color: var(--dark);
+        color: var(--light);
+    }
+
+    svg {
+        fill: var(--dark);
+    }
+
+    svg:hover {
+        fill: rgb(174, 174, 178);
+    }
+
+    #icons {
+        background: var(--light);
+    }
 }
