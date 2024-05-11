@@ -6,7 +6,7 @@ description = "Dev env manager that doesn't suck"
 
 A couple of days ago I discovered [mise](https://mise.jdx.dev) (pronounced "meez"). It's a polyglot tool version manager similar to asdf or pyenv, and an environment manager, like direnv, that is fast, reliable, has a declarative configuration and feels as good as cargo.
 
-I have stopped using [hatch](https://hatch.pypa.io/latest/) which I had previously been using only for downloading Pythons from [python-build-standalone](https://github.com/indygreg/python-build-standalone) with the command [`hatch python install all --update`](https://hatch.pypa.io/1.10/blog/2023/12/11/hatch-v180/#python-management). I have also stopped using Node from Homebrew, and removed custom scripts from my dotfiles that were used to keep pipx installations synchronized between my work and personal laptops.
+I got rid of [hatch](https://hatch.pypa.io/latest/) which I had previously been using only for downloading Pythons from [python-build-standalone](https://github.com/indygreg/python-build-standalone) with the command [`hatch python install all --update`](https://hatch.pypa.io/1.10/blog/2023/12/11/hatch-v180/#python-management). I have also stopped using Node from Homebrew, and removed custom scripts from my dotfiles that were used to keep pipx installations synchronized between my work and personal laptops.
 
 My `~/.config/mise/config.toml` now looks like this:
 
@@ -34,4 +34,4 @@ GITLAB_TOKEN = "..."
 ...
 ```
 
-It's great.
+Everything is great so far.
