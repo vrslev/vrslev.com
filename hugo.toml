@@ -4,9 +4,9 @@ title = 'vrslev'
 theme = "hugo-coder"
 enableEmoji = true
 
-
 [markup.highlight]
-style = "gruvbox"
+noClasses = false
+style = "github"
 
 [params]
 author = "Lev Vereshchagin"
