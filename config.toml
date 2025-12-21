@@ -6,7 +6,6 @@ description = "Lev's blog"
 default_language = "en"
 minify_html = true
 generate_feeds = true
-author = "Lev Vereshchagin"
 feed_filenames = ["atom.xml", "rss.xml"]
 taxonomies = [
     { name = "tags", feed = true },
