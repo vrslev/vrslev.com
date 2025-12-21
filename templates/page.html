@@ -42,6 +42,7 @@
             {{ page.date | date(format="%Y-%m-%d, %A") }}
         {% endif %}
         {% set_global is_original = false %}
+        {% set_global translation_type = "" %}
         {% set_global tag_count = 0 %}
         {% for key, value in page.taxonomies %}
             {% if key == "tags" %}
@@ -50,18 +51,34 @@
                     {% set_global tag_count = tag_count + 1 %}
                 {% endif %}
                 {% if "human-translation" in value %}
+                    {% set_global translation_type = "human" %}
                     {% set_global tag_count = tag_count + 1 %}
                 {% endif %}
                 {% if "ai-translation" in value %}
+                    {% set_global translation_type = "ai" %}
                     {% set_global tag_count = tag_count + 1 %}
                 {% endif %}
             {% endif %}
         {% endfor %}
-
         {% if tag_count > 1 %}
             {{ throw(message="Multiple translation tags found in " ~ page.relative_path ~ "! Posts must have exactly one of: original-lang, human-translation, ai-translation") }}
         {% endif %}
-
+        {% if not is_original %}
+            &nbsp;&middot;&nbsp;&nbsp;
+            {% if translation_type == "ai" %}
+                {% if page.lang == "en" %}
+                    Translated from Russian with AI
+                {% elif page.lang == "ru" %}
+                    Переведено с английского с помощью ИИ
+                {% endif %}
+            {% else %}
+                {% if page.lang == "en" %}
+                    Translated from Russian
+                {% elif page.lang == "ru" %}
+                    Перевод с английского
+                {% endif %}
+            {% endif %}
+        {% endif %}
         {% if page.translations %}
             {% for translation in page.translations %}
                 {% if is_original %}
