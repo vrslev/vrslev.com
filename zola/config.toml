@@ -13,11 +13,6 @@ generate_feeds = true
 # The number of articles to include in the feed
 feed_limit = 20
 
-# The taxonomies to be used on the site
-taxonomies = [
-  {name = "tags", feed = true},
-]
-
 # The default author for pages
 [extra]
 author = "Lev Vereshchagin"
