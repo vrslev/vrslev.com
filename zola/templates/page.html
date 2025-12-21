@@ -3,6 +3,23 @@
 {% block title %}{{ page.title }} | {{ super() }}{% endblock title %}
 
 {% block content %}
+<style>
+    .page-title {
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: var(--size-xs);
+    }
+
+    .post-meta {
+        color: var(--color-text-secondary);
+        margin-bottom: var(--size-lg);
+    }
+
+    .go-back-link {
+        margin-top: var(--size-lg);
+    }
+</style>
+
 <article>
     <h1 class="page-title">{{ page.title }}</h1>
     <div class="post-meta">
