@@ -261,7 +261,7 @@
         pre {
             background-color: var(--color-code-bg);
             padding: var(--size-xs);
-            border-radius: var(--size-xxs);
+            border-radius: 0;
             overflow-x: auto;
             margin: var(--size-md) 0;
         }
@@ -327,29 +327,9 @@
         pre tr:has(mark) td {
             background-color: rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Dark mode code block improvements */
         @media (prefers-color-scheme: dark) {
-            /* Ensure code blocks use our background color */
-            pre,
-            pre[class*="language-"] {
-                background-color: var(--color-code-bg);
-            }
-            
-            /* Improve syntax highlighting contrast */
-            pre .z-entity.z-name.z-tag {
-                color: #569cd6;
-            }
-            
-            pre .z-string {
-                color: #ce9178;
-            }
-            
-            pre .z-constant.z-numeric {
-                color: #b5cea8;
-            }
-            
-            /* Fix highlighted lines in dark mode */
             pre tr:has(mark) td {
                 background-color: rgba(255, 255, 255, 0.1);
             }
