@@ -3,6 +3,8 @@
 {% block title %}{{ page.title }} | {{ super() }}{% endblock title %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)" />
+<link rel="stylesheet" type="text/css" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)" />
 <style>
     .page-title {
         font-size: 2rem;
