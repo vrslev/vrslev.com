@@ -87,41 +87,45 @@ c.users.list().then(users => {
 ## Tips for Better Documentation
 
 > "The best documentation is the kind that people actually read. But great documentation goes beyond just being readable - it should be actionable, comprehensive, and maintainable.
-> 
+>
 > Consider this example of a well-documented API endpoint:
-> 
+>
 > ```python
 > def create_user(name: str, email: str) -> User:
 >     """
 >     Create a new user in the system.
->     
+>
 >     Args:
 >         name: Full name of the user
 >         email: Email address (must be unique)
->     
+>
 >     Returns:
 >         The created User object
->     
+>
 >     Raises:
 >         ValueError: If email is invalid
 >         DuplicateEmailError: If email already exists
 >     """
 > ```
-> 
+>
 > Notice how the documentation includes:
-> 
+>
 > - Clear parameter descriptions
 > - Expected return value
 > - Possible exceptions
 > - Type hints for better IDE support
-> 
+>
 > This level of detail helps developers understand not just what the function does, but how to use it correctly."
 
 1. Write for your audience
 2. Keep examples simple but realistic
 3. Include both basic and advanced use cases
-4. Update documentation when code changes
+4. Update documentation when code changes[^3]
 
-Great documentation doesn't happen by accident. It requires planning, writing, and maintenance—just like code. By treating documentation as a first-class citizen in your project, you'll create a better experience for everyone involved.
+Great documentation doesn't happen by accident. It requires planning, writing, and maintenance—just like code. By treating documentation as a first-class citizen in your project, you'll create a better experience for everyone involved[^2].
+
+[^2]: This is another example of a helpful footnote that provides additional context without interrupting the main content flow.
+
+[^3]: This is another example of a helpful footnote that provides additional context without interrupting the main content flow.
 
 Check out our [full documentation](https://example.com/docs) to learn more.
