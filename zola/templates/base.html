@@ -22,10 +22,21 @@
             background-color: #fff;
         }
 
+        /* Spacing system */
+        :root {
+            --space-xxs: 0.25rem;
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-xxl: 3rem;
+        }
+
         /* Typography */
         h1, h2, h3, h4, h5, h6 {
-            margin-top: 1rem;
-            margin-bottom: 0.8rem;
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-sm);
         }
 
         /* Links */
@@ -60,7 +71,7 @@
 
         /* Header */
         header {
-            margin-bottom: 0.25rem;
+            margin-bottom: var(--space-xxs);
         }
 
         .header-text h1 {
@@ -82,9 +93,74 @@
 
         /* Horizontal rules */
         hr {
-            margin: 1.5rem 0;
+            margin: var(--space-lg) 0;
             border: 0;
             border-top: 1px solid #eee;
+        }
+
+        /* Content sections */
+        .content-section {
+            margin-bottom: var(--space-xl);
+        }
+
+        /* Post items */
+        .post-item {
+            margin-bottom: var(--space-md);
+        }
+
+        .post-item-header {
+            display: flex;
+        }
+
+        .post-date {
+            width: 7rem;
+            flex-shrink: 0;
+        }
+
+        .post-title {
+            text-decoration: none;
+        }
+
+        .post-description {
+            margin-top: var(--space-xxs);
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* About section */
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .about-text {
+            flex-grow: 1;
+        }
+
+        .about-contact {
+            margin-top: var(--space-md);
+        }
+
+        .contact-label {
+            margin-bottom: var(--space-xxs);
+        }
+
+        .contact-links {
+            display: flex;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: inherit;
+            margin-right: var(--space-xs);
+        }
+
+        .contact-link:last-child {
+            margin-right: 0;
+        }
+
+        .avatar-spacing {
+            margin-left: var(--space-md);
         }
 
         /* Dark mode */

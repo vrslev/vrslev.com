@@ -4,43 +4,43 @@
 <h2>Posts <a href="/atom.xml" style="text-decoration: none; color: inherit; font-size: 1rem; vertical-align: middle;" title="RSS Feed"><i class="fas fa-rss"></i></a></h2>
 {% set section = get_section(path="posts/_index.md") %}
 {% for page in section.pages %}
-<div style="margin-bottom: 1rem;">
-    <div style="display: flex;">
-        <span style="display: inline-block; width: 120px; flex-shrink: 0;">{{ page.date | date(format="%Y-%m-%d") }}</span>
+<div class="post-item">
+    <div class="post-item-header">
+        <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
         <div>
-            <a href="{{ page.permalink }}" style="text-decoration: none;">{{ page.title }}</a>
+            <a href="{{ page.permalink }}" class="post-title">{{ page.title }}</a>
             {% if page.description %}
-            <div style="margin-top: 0.2rem; color: #666; font-size: 0.9rem;">{{ page.description }}</div>
+            <div class="post-description">{{ page.description }}</div>
             {% endif %}
         </div>
     </div>
 </div>
 {% endfor %}
 
-<hr style="margin: 2rem 0; border: 0; border-top: 1px solid #eee;">
+<hr>
 
 <h2>About Me</h2>
-<div style="margin-bottom: 2rem;">
-    <div style="display: flex; align-items: flex-start;">
-        <div style="flex-grow: 1;">
+<div class="content-section">
+    <div class="about-content">
+        <div class="about-text">
             <p><strong>Lev Vereshchagin</strong></p>
             <p>Software Developer</p>
-            <div style="margin-top: 1rem;">
-                <div style="margin-bottom: 0.25rem;">Contact:</div>
-                <div>
-                    <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">
+            <div class="about-contact">
+                <div class="contact-label">Contact:</div>
+                <div class="contact-links">
+                    <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" class="contact-link">
                         <i class="fa-brands fa-github fa-xl"></i>
                     </a>
-                    <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">
+                    <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram" class="contact-link">
                         <i class="fa-brands fa-telegram fa-xl"></i>
                     </a>
-                    <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail" style="text-decoration: none; color: inherit;">
+                    <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail" class="contact-link">
                         <i class="fa-regular fa-envelope fa-xl"></i>
                     </a>
                 </div>
             </div>
         </div>
-        <img src="https://avatars.githubusercontent.com/u/75225148" alt="Avatar" class="avatar" style="margin-left: 1rem;">
+        <img src="https://avatars.githubusercontent.com/u/75225148" alt="Avatar" class="avatar avatar-spacing">
     </div>
 </div>
 {% endblock content %}
