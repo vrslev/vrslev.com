@@ -12,6 +12,8 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" type="text/css" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)" />
+    <link rel="stylesheet" type="text/css" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)" />
     <!-- CSS -->
     <style>
         /* Sizing system */
@@ -82,21 +84,21 @@
         }
 
         /* Reduce margin when any heading follows another heading */
-        h1 + h2,
-        h1 + h3,
-        h1 + h4,
-        h1 + h5,
-        h1 + h6,
-        h2 + h3,
-        h2 + h4,
-        h2 + h5,
-        h2 + h6,
-        h3 + h4,
-        h3 + h5,
-        h3 + h6,
-        h4 + h5,
-        h4 + h6,
-        h5 + h6 {
+        h1+h2,
+        h1+h3,
+        h1+h4,
+        h1+h5,
+        h1+h6,
+        h2+h3,
+        h2+h4,
+        h2+h5,
+        h2+h6,
+        h3+h4,
+        h3+h5,
+        h3+h6,
+        h4+h5,
+        h4+h6,
+        h5+h6 {
             margin-top: var(--size-sm);
         }
 
@@ -405,7 +407,7 @@
         // Hide main content initially to prevent flicker
         document.documentElement.classList.add('js-loading');
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Find all tables and wrap them in a scrollable container
             const tables = document.querySelectorAll('table');
             tables.forEach(table => {
