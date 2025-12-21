@@ -9,6 +9,11 @@ generate_feeds = true
 author = "Lev Vereshchagin"
 feed_filenames = ["atom.xml", "rss.xml"]
 
+[languages.ru]
+title = "Лев Верещагин"
+description = "Блог Льва"
+generate_feeds = true
+
 [markdown]
 highlight_code = true
 highlight_theme = "css"

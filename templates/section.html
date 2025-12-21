@@ -97,13 +97,9 @@
 
 <h2>Posts <a href="{% if lang == "ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed" style="float: right;"><i class="fas fa-rss"></i></a>
 </h2>
-{% if lang == "ru" %}
-    {% set posts_section = get_section(path="posts/_index.ru.md") %}
-{% else %}
-    {% set posts_section = get_section(path="posts/_index.md") %}
-{% endif %}
+{% set section = section %}
 <div class="post-items">
-    {% for page in posts_section.pages %}
+    {% for page in section.pages %}
     <div class="post-item-header">
         <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
         <div>

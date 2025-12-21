@@ -18,6 +18,14 @@
         margin-bottom: var(--size-lg);
     }
 
+    .translation-link {
+        margin: var(--size-md) 0;
+        padding: var(--size-xs);
+        border: 1px solid var(--color-border);
+        border-radius: var(--size-xxs);
+        display: inline-block;
+    }
+
     .go-back-link {
         margin-top: var(--size-lg);
     }
@@ -26,13 +34,49 @@
 <article>
     <h1 class="page-title">{{ page.title }}</h1>
     <div class="post-meta">
-        {{ page.date | date(format="%Y-%m-%d, %A") }}
+        {% if lang == "ru" %}
+            {% set english_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+            {% set russian_days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"] %}
+            {% set english_day = page.date | date(format="%A") %}
+            {% for i in range(end=7) %}
+                {% if english_days[i] == english_day %}
+                    {% set_global russian_day = russian_days[i] %}
+                {% endif %}
+            {% endfor %}
+            {{ page.date | date(format="%Y-%m-%d") }}, {{ russian_day }}
+        {% else %}
+            {{ page.date | date(format="%Y-%m-%d, %A") }}
+        {% endif %}
     </div>
 
     {{ page.content | safe }}
 
+    {% if page.translations %}
+        {% for translation in page.translations %}
+            {% if translation.lang == "ru" %}
+                <div class="translation-link">
+                    {% if page.lang == "en" %}
+                        Перевод на русский: 
+                    {% else %}
+                        Translation to English: 
+                    {% endif %}
+                    <a href="{{ translation.permalink }}">{{ translation.title }}</a>
+                </div>
+            {% elif translation.lang == "en" %}
+                <div class="translation-link">
+                    {% if page.lang == "ru" %}
+                        Оригинал на английском: 
+                    {% else %}
+                        Original in English: 
+                    {% endif %}
+                    <a href="{{ translation.permalink }}">{{ translation.title }}</a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
     <div class="go-back-link">
-        <a href="/" class="home-link">← Home</a>
+        <a href="/" class="home-link">← {% if lang == "ru" %}Главная{% else %}Home{% endif %}</a>
     </div>
 </article>
 {% endblock content %}

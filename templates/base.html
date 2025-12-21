@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}">
 
 <head>
     <meta charset="utf-8">
@@ -414,6 +414,19 @@
             text-decoration: none;
         }
 
+        /* Language switcher */
+        .language-switcher {
+            float: right;
+            font-size: 0.9rem;
+        }
+
+        .active-lang {
+            font-weight: bold;
+            text-decoration: none;
+            pointer-events: none;
+            color: var(--color-text-primary);
+        }
+
         /* Header */
         .header-text h1 {
             margin: 0;
@@ -487,7 +500,11 @@
 <body>
     <header>
         <div class="header-text">
-            <h1><a href="/" class="header-name">Lev Vereshchagin</a></h1>
+            <h1><a href="/" class="header-name">{% if lang == 'ru' %}Лев Верещагин{% else %}Lev Vereshchagin{% endif %}</a></h1>
+        </div>
+        <div class="language-switcher">
+            <a href="/" class="{% if lang == 'en' %}active-lang{% endif %}">EN</a> |
+            <a href="/ru/" class="{% if lang == 'ru' %}active-lang{% endif %}">RU</a>
         </div>
     </header>
 
