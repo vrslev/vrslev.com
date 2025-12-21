@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Posts <a href="/atom.xml" class="rss-link" title="RSS Feed"><i class="fas fa-rss"></i></a></h2>
+<h2>Posts <a href="/atom.xml" class="rss-link" title="RSS Feed" style="float: right;"><i class="fas fa-rss"></i></a></h2>
 {% set section = get_section(path="posts/_index.md") %}
 <div class="post-items">
     {% for page in section.pages %}
@@ -21,25 +21,28 @@
 
 <hr>
 
-<h2>About Me</h2>
-<div class="content-section">
-    <div class="about-content">
-        <div class="about-text">
-            <p>Lev Vereshchagin — Software Developer</p>
-            <p>Socials:</p>
-            <div class="contact-links">
-                <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" class="contact-link">
-                    <i class="fa-brands fa-github fa-2x"></i>
-                </a>
-                <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram" class="contact-link">
-                    <i class="fa-brands fa-telegram fa-2x"></i>
-                </a>
-                <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail" class="contact-link">
-                    <i class="fa-regular fa-envelope fa-2x"></i>
-                </a>
+<div class="about-section">
+    <div class="about-main">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Lev Vereshchagin — Software Developer</p>
+                <p>Socials:</p>
+                <div class="contact-links">
+                    <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" class="contact-link">
+                        <i class="fa-brands fa-github fa-2x"></i>
+                    </a>
+                    <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram" class="contact-link">
+                        <i class="fa-brands fa-telegram fa-2x"></i>
+                    </a>
+                    <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail" class="contact-link">
+                        <i class="fa-regular fa-envelope fa-2x"></i>
+                    </a>
+                </div>
             </div>
         </div>
-        <img src="https://avatars.githubusercontent.com/u/75225148" alt="Avatar" class="avatar">
     </div>
+    <img src="https://avatars.githubusercontent.com/u/75225148" alt="Avatar" class="avatar">
+</div>
 </div>
 {% endblock content %}
