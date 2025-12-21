@@ -101,12 +101,13 @@
     }
 </style>
 
-<h2>Posts <a href="{% if lang == "ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed" style="float: right;"><i class="fas fa-rss"></i></a>
+<h2>Posts <a href="{% if lang == " ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed"
+        style="float: right;"><i class="fas fa-rss"></i></a>
 </h2>
 {% if lang == "ru" %}
-    {% set posts_section = get_section(path="posts/_index.ru.md") %}
+{% set posts_section = get_section(path="posts/_index.ru.md") %}
 {% else %}
-    {% set posts_section = get_section(path="posts/_index.md") %}
+{% set posts_section = get_section(path="posts/_index.md") %}
 {% endif %}
 <div class="post-items">
     {% for page in posts_section.pages %}
@@ -129,7 +130,8 @@
         <h2>{% if lang == "ru" %}Обо мне{% else %}About me{% endif %}</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>{% if lang == "ru" %}Лев Верещагин — Разработчик ПО{% else %}Lev Vereshchagin — Software Developer{% endif %}</p>
+                <p>{% if lang == "ru" %}Лев Верещагин — Разработчик{% else %}Lev Vereshchagin — Software Developer{%
+                    endif %}</p>
                 <div class="contact-links">
                     <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" class="contact-link">
                         <i class="fa-brands fa-github fa-2x"></i>
@@ -144,7 +146,8 @@
             </div>
         </div>
     </div>
-    <img src="https://avatars.githubusercontent.com/u/75225148" alt="{% if lang == "ru" %}Аватар{% else %}Avatar{% endif %}" class="avatar" loading="lazy">
+    <img src="https://avatars.githubusercontent.com/u/75225148" alt="{% if lang == " ru" %}Аватар{% else %}Avatar{%
+        endif %}" class="avatar" loading="lazy">
 </div>
 </div>
 
@@ -152,9 +155,9 @@
 
 <div class="language-switcher">
     {% if lang == "ru" %}
-        <a href="/">Read in English</a>
+    <a href="/">Read in English</a>
     {% else %}
-        <a href="/ru/">Читать на русском</a>
+    <a href="/ru/">Читать на русском</a>
     {% endif %}
 </div>
 {% endblock content %}
