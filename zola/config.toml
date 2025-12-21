@@ -1,5 +1,6 @@
 # The URL of the site
-base_url = "https://vrslev.com"
+base_url = "/"
+# base_url = "https://vrslev.com"
 
 # The site title
 title = "Lev Vereshchagin"

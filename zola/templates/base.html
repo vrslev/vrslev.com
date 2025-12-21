@@ -403,6 +403,18 @@
             margin: 0;
             color: var(--color-text-secondary);
         }
+
+        @view-transition {
+            navigation: auto;
+        }
+
+        ::view-transition-old(root) {
+            animation: none;
+        }
+
+        ::view-transition-new(root) {
+            animation: none;
+        }
     </style>
     <script>
         // Hide main content initially to prevent flicker
@@ -441,10 +453,18 @@
             addHeaderLinks();
             fixTables()
 
-
             // Remove loading class to reveal content
             document.documentElement.classList.remove('js-loading');
         });
+    </script>
+    <script type="speculationrules">
+        {
+            "prerender": [{
+                "where": {
+        "selector_matches": "a"
+      }
+            }]
+        }
     </script>
 </head>
 
