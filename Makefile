@@ -4,7 +4,7 @@ build:
 	zola build
 
 serve:
-	tmux new-session -d -s zola-dev 'zola serve' || tmux attach-session -t zola-dev
+	tmux new-session -d -s zola-dev 'zola serve' || exit 0
 
 clean:
 	rm -rf public/
