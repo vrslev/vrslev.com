@@ -2,7 +2,7 @@
 date = 2024-02-02T20:16:52+03:00
 title = 'Привет 🎉'
 description = "Первый пост в моем блоге"
-taxonomies.tags = ["личное", "введение", "human-translation"]
+taxonomies.tags = ["ai-translation"]
 +++
 
 Привет! 👋

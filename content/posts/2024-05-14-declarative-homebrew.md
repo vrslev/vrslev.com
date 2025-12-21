@@ -1,7 +1,7 @@
 +++
 date = 2024-05-14T14:51:08+03:00
 title = "Declarative Homebrew"
-taxonomies.tags = ["macos", "homebrew", "devops", "automation", "original-lang"]
+taxonomies.tags = ["original-lang"]
 +++
 
 I want to keep my development environment consistent across both my work and personal MacBooks. (That's why I [use](../dev-env-with-mise) mise and [have](https://github.com/vrslev/dotfiles) dotfiles repository.)

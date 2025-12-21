@@ -2,7 +2,7 @@
 date = 2024-05-11T09:46:33+03:00
 title = "mise-en-place: dev env in a world with cargo"
 description = "Dev env manager that doesn't suck"
-taxonomies.tags = ["python", "nodejs", "dev-tools", "environment-management", "original-lang"]
+taxonomies.tags = ["original-lang"]
 +++
 
 A couple of days ago I discovered [mise](https://mise.jdx.dev) (pronounced "meez"). It's a polyglot tool version manager similar to asdf or pyenv, and an environment manager, like direnv, that is fast, reliable, has a declarative configuration and feels as good as cargo.
