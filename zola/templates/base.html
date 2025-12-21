@@ -64,6 +64,20 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Visual indication for targeted headers */
+        :target {
+            scroll-margin-top: var(--size-md);
+        }
+
+        :target {
+            background-color: var(--color-code-bg);
+        }
+
         /* Hide content initially when JavaScript is enabled */
         .js-loading body {
             display: none;
@@ -335,6 +349,25 @@
             }
         }
 
+        .header-link {
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            margin-left: var(--size-xs);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        h1:hover .header-link,
+        h2:hover .header-link,
+        h3:hover .header-link,
+        h4:hover .header-link,
+        h5:hover .header-link,
+        h6:hover .header-link {
+            opacity: 1;
+        }
+        .header-link:hover {
+            color: var(--color-link);
+        }
+
         /* Header */
         header {
             margin-bottom: var(--size-sm);
@@ -440,9 +473,12 @@
             text-decoration: none;
         }
 
-        .header-link {
+        .header-name {
             text-decoration: none;
             color: inherit;
+        }
+        .header-name:hover {
+            text-decoration: none;
         }
 
         .rss-link {
@@ -465,7 +501,24 @@
         // Hide main content initially to prevent flicker
         document.documentElement.classList.add('js-loading');
 
+        // Add header links
+        function addHeaderLinks() {
+            const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            headers.forEach(header => {
+                if (header.id) {
+                    const link = document.createElement('a');
+                    link.href = '#' + header.id;
+                    link.className = 'header-link';
+                    link.innerHTML = '#';
+                    link.title = 'Permalink to this section';
+                    header.appendChild(link);
+                }
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
+            addHeaderLinks();
+
             // Find all tables that are not inside code blocks and wrap them in a scrollable container
             const tables = document.querySelectorAll('table:not(pre table)');
             tables.forEach(table => {
@@ -488,7 +541,7 @@
 <body>
     <header>
         <div class="header-text">
-            <h1><a href="/" class="header-link">Lev Vereshchagin</a></h1>
+            <h1><a href="/" class="header-name">Lev Vereshchagin</a></h1>
         </div>
     </header>
 
