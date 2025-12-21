@@ -188,6 +188,16 @@
             display: table;
         }
         
+        /* Hide tables until JavaScript has processed them to prevent flicker */
+        table {
+            visibility: hidden;
+        }
+        
+        /* Show tables after they've been wrapped in containers */
+        .table-container table {
+            visibility: visible;
+        }
+        
         th {
             background-color: var(--color-code-bg);
             padding: var(--size-sm);
