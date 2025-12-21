@@ -1,0 +1,33 @@
+# The URL of the site
+base_url = "https://vrslev.com"
+
+# The site title
+title = "Lev Vereshchagin"
+
+# The default language of the site
+default_language = "en"
+
+# Whether to generate a feed file
+generate_feeds = true
+
+# The number of articles to include in the feed
+feed_limit = 20
+
+# The taxonomies to be used on the site
+taxonomies = [
+  {name = "tags", feed = true},
+]
+
+# The default author for pages
+[extra]
+author = "Lev Vereshchagin"
+info = "Software Developer"
+description = "Lev Vereshchagin's personal website"
+avatar_url = "https://avatars.githubusercontent.com/u/75225148"
+
+# Social links
+socials = [
+  {name = "GitHub", url = "https://github.com/vrslev", icon = "fa-brands fa-github fa-2x"},
+  {name = "Telegram", url = "https://t.me/vrslev", icon = "fa-brands fa-telegram fa-2x"},
+  {name = "Mail", url = "mailto:mail@vrslev.com", icon = "fa-regular fa-envelope fa-2x"},
+]

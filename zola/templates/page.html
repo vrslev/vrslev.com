@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} | {{ super() }}{% endblock title %}
+
+{% block content %}
+<article>
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+        {{ page.date | date(format="%Y-%m-%d, %A") }}
+        {% if page.taxonomies.tags %}
+        <div class="post-tags">
+            {% for tag in page.taxonomies.tags %}
+                <a href="/tags/{{ tag }}" class="tag">{{ tag }}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    
+    {{ page.content | safe }}
+</article>
+{% endblock content %}

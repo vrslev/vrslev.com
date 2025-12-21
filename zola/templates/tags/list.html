@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Tags | {{ super() }}{% endblock title %}
+
+{% block content %}
+<h1>Tags</h1>
+{% for tag in terms %}
+<article>
+    <h2><a href="{{ tag.permalink }}">{{ tag.name }}</a> ({{ tag.pages | length }} post{{ tag.pages | length | pluralize }})</h2>
+</article>
+{% endfor %}
+{% endblock content %}

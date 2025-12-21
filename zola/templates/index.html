@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Posts</h2>
+{% set section = get_section(path="posts/_index.md") %}
+{% for page in section.pages %}
+<div class="post-entry">
+    <div class="date-title">{{ page.date | date(format="%Y-%m-%d") }}    <a href="{{ page.permalink }}">{{ page.title }}</a></div>
+    <div class="description">{{ page.description }}</div>
+</div>
+{% endfor %}
+
+<h2>About Me</h2>
+<div style="display: flex; align-items: flex-start; margin-bottom: 2rem;">
+    <img src="{{ config.extra.avatar_url }}" alt="Avatar" class="avatar" style="margin-right: 1rem;">
+    <div>
+        <p><strong>{{ config.extra.author }}</strong></p>
+        <p>{{ config.extra.info }}</p>
+    </div>
+</div>
+
+<h2>Contact</h2>
+<div class="social-links">
+    {% for social in config.extra.socials %}
+        <a href="{{ social.url }}" title="{{ social.name }}" aria-label="{{ social.name }}">
+            <i class="{{ social.icon }}"></i>
+        </a>
+    {% endfor %}
+</div>
+{% endblock content %}
