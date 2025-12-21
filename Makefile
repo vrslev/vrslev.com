@@ -6,8 +6,5 @@ build:
 serve:
 	tmux new-session -d -s zola-dev 'zola serve' || exit 0
 
-clean:
-	rm -rf public/
-
 check:
 	zola check
