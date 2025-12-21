@@ -1,5 +1,4 @@
 +++
-title = "Посты"
+redirect_to = "/"
 sort_by = "date"
-template = "section.html"
 +++
