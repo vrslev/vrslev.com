@@ -83,21 +83,27 @@
     .contact-link:hover {
         text-decoration: underline;
     }
+
+    .rss-link {
+        text-decoration: none;
+        color: inherit;
+        font-size: 1rem;
+        vertical-align: middle;
+    }
 </style>
 
-<h2>Posts <a href="/atom.xml" class="rss-link" title="RSS Feed" style="float: right;"><i class="fas fa-rss"></i></a></h2>
+<h2>Posts <a href="/atom.xml" class="rss-link" title="RSS Feed" style="float: right;"><i class="fas fa-rss"></i></a>
+</h2>
 {% set section = get_section(path="posts/_index.md") %}
 <div class="post-items">
     {% for page in section.pages %}
-    <div class="post-item">
-        <div class="post-item-header">
-            <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-            <div>
-                <a href="{{ page.permalink }}" class="post-title">{{ page.title }}</a>
-                {% if page.description %}
-                <div class="post-description">{{ page.description }}</div>
-                {% endif %}
-            </div>
+    <div class="post-item-header">
+        <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+        <div>
+            <a href="{{ page.permalink }}" class="post-title">{{ page.title }}</a>
+            {% if page.description %}
+            <div class="post-description">{{ page.description }}</div>
+            {% endif %}
         </div>
     </div>
     {% endfor %}
