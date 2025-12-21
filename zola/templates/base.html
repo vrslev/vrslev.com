@@ -316,22 +316,42 @@
 
         /* Highlighted lines */
         pre mark {
-            background-color: unset !important;
-            color: inherit !important;
+            background-color: unset;
+            color: inherit;
             display: block;
-            margin: 0 !important;
-            padding: 0 !important;
+            margin: 0;
+            padding: 0;
         }
 
         /* Ensure highlighted lines span full width */
         pre tr:has(mark) td {
-            background-color: rgba(0, 0, 0, 0.1) !important;
+            background-color: rgba(0, 0, 0, 0.1);
         }
-
+        
+        /* Dark mode code block improvements */
         @media (prefers-color-scheme: dark) {
-
+            /* Ensure code blocks use our background color */
+            pre,
+            pre[class*="language-"] {
+                background-color: var(--color-code-bg);
+            }
+            
+            /* Improve syntax highlighting contrast */
+            pre .z-entity.z-name.z-tag {
+                color: #569cd6;
+            }
+            
+            pre .z-string {
+                color: #ce9178;
+            }
+            
+            pre .z-constant.z-numeric {
+                color: #b5cea8;
+            }
+            
+            /* Fix highlighted lines in dark mode */
             pre tr:has(mark) td {
-                background-color: rgba(255, 255, 255, 0.1) !important;
+                background-color: rgba(255, 255, 255, 0.1);
             }
         }
 
