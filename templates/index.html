@@ -93,6 +93,12 @@
         font-size: 1rem;
         vertical-align: middle;
     }
+
+    /* Language switcher */
+    .language-switcher {
+        text-align: left;
+        margin: var(--size-lg) 0;
+    }
 </style>
 
 <h2>Posts <a href="{% if lang == "ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed" style="float: right;"><i class="fas fa-rss"></i></a>
@@ -140,5 +146,15 @@
     </div>
     <img src="https://avatars.githubusercontent.com/u/75225148" alt="{% if lang == "ru" %}Аватар{% else %}Avatar{% endif %}" class="avatar" loading="lazy">
 </div>
+</div>
+
+<hr>
+
+<div class="language-switcher">
+    {% if lang == "ru" %}
+        <a href="/">Read in English</a>
+    {% else %}
+        <a href="/ru/">Читать на русском</a>
+    {% endif %}
 </div>
 {% endblock content %}

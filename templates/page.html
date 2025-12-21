@@ -18,13 +18,7 @@
         margin-bottom: var(--size-lg);
     }
 
-    .translation-link {
-        margin: var(--size-md) 0;
-        padding: var(--size-xs);
-        border: 1px solid var(--color-border);
-        border-radius: var(--size-xxs);
-        display: inline-block;
-    }
+
 
     .go-back-link {
         margin-top: var(--size-lg);
@@ -47,36 +41,21 @@
         {% else %}
             {{ page.date | date(format="%Y-%m-%d, %A") }}
         {% endif %}
+        {% if page.translations %}
+            {% for translation in page.translations %}
+                {% if translation.lang == "ru" and page.lang == "en" %}
+                    &nbsp;&middot;&nbsp;<a href="{{ translation.permalink }}">Перевод на русский</a>
+                {% elif translation.lang == "en" and page.lang == "ru" %}
+                    &nbsp;&middot;&nbsp;<a href="{{ translation.permalink }}">Оригинал на английском</a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
     </div>
 
     {{ page.content | safe }}
 
-    {% if page.translations %}
-        {% for translation in page.translations %}
-            {% if translation.lang == "ru" %}
-                <div class="translation-link">
-                    {% if page.lang == "en" %}
-                        Перевод на русский: 
-                    {% else %}
-                        Translation to English: 
-                    {% endif %}
-                    <a href="{{ translation.permalink }}">{{ translation.title }}</a>
-                </div>
-            {% elif translation.lang == "en" %}
-                <div class="translation-link">
-                    {% if page.lang == "ru" %}
-                        Оригинал на английском: 
-                    {% else %}
-                        Original in English: 
-                    {% endif %}
-                    <a href="{{ translation.permalink }}">{{ translation.title }}</a>
-                </div>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-
     <div class="go-back-link">
-        <a href="/" class="home-link">← {% if lang == "ru" %}Главная{% else %}Home{% endif %}</a>
+        <a href="{% if lang == "ru" %}/ru/{% else %}/{% endif %}" class="home-link">← {% if lang == "ru" %}Главная{% else %}Home{% endif %}</a>
     </div>
 </article>
 {% endblock content %}
