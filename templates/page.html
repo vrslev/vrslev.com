@@ -6,7 +6,6 @@
 <link rel="stylesheet" type="text/css" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)" />
 <link rel="stylesheet" type="text/css" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)" />
 <style>
-
     .page-title {
         font-size: 2rem;
         margin-top: 0;
@@ -20,8 +19,10 @@
 
 
 
-    .go-back-link {
+    .post-footer {
         margin-top: var(--size-lg);
+        display: flex;
+        justify-content: space-between;
     }
 </style>
 
@@ -29,79 +30,88 @@
     <h1 class="page-title">{{ page.title }}</h1>
     <div class="post-meta">
         {% if lang == "ru" %}
-            {% set english_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {% set russian_days = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"] %}
-            {% set english_day = page.date | date(format="%A") %}
-            {% for i in range(end=7) %}
-                {% if english_days[i] == english_day %}
-                    {% set_global russian_day = russian_days[i] %}
-                {% endif %}
-            {% endfor %}
-            {{ page.date | date(format="%Y-%m-%d") }}, {{ russian_day }}
+        {% set english_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+        {% set russian_days = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"] %}
+        {% set english_day = page.date | date(format="%A") %}
+        {% for i in range(end=7) %}
+        {% if english_days[i] == english_day %}
+        {% set_global russian_day = russian_days[i] %}
+        {% endif %}
+        {% endfor %}
+        {{ page.date | date(format="%Y-%m-%d") }}, {{ russian_day }}
         {% else %}
-            {{ page.date | date(format="%Y-%m-%d, %A") }}
+        {{ page.date | date(format="%Y-%m-%d, %A") }}
         {% endif %}
         {% set_global is_original = false %}
         {% set_global translation_type = "" %}
         {% set_global tag_count = 0 %}
         {% for key, value in page.taxonomies %}
-            {% if key == "tags" %}
-                {% if "original-lang" in value %}
-                    {% set_global is_original = true %}
-                    {% set_global tag_count = tag_count + 1 %}
-                {% endif %}
-                {% if "human-translation" in value %}
-                    {% set_global translation_type = "human" %}
-                    {% set_global tag_count = tag_count + 1 %}
-                {% endif %}
-                {% if "ai-translation" in value %}
-                    {% set_global translation_type = "ai" %}
-                    {% set_global tag_count = tag_count + 1 %}
-                {% endif %}
-            {% endif %}
+        {% if key == "tags" %}
+        {% if "original-lang" in value %}
+        {% set_global is_original = true %}
+        {% set_global tag_count = tag_count + 1 %}
+        {% endif %}
+        {% if "human-translation" in value %}
+        {% set_global translation_type = "human" %}
+        {% set_global tag_count = tag_count + 1 %}
+        {% endif %}
+        {% if "ai-translation" in value %}
+        {% set_global translation_type = "ai" %}
+        {% set_global tag_count = tag_count + 1 %}
+        {% endif %}
+        {% endif %}
         {% endfor %}
         {% if tag_count > 1 %}
-            {{ throw(message="Multiple translation tags found in " ~ page.relative_path ~ "! Posts must have exactly one of: original-lang, human-translation, ai-translation") }}
+        {{ throw(message="Multiple translation tags found in " ~ page.relative_path ~ "! Posts must have exactly one of:
+        original-lang, human-translation, ai-translation") }}
         {% endif %}
         {% if not is_original %}
-            &nbsp;&middot;&nbsp;&nbsp;
-            {% if translation_type == "ai" %}
-                {% if page.lang == "en" %}
-                    Translated from Russian with AI
-                {% elif page.lang == "ru" %}
-                    Переведено с английского с помощью ИИ
-                {% endif %}
-            {% else %}
-                {% if page.lang == "en" %}
-                    Translated from Russian
-                {% elif page.lang == "ru" %}
-                    Перевод с английского
-                {% endif %}
-            {% endif %}
+        &nbsp;&middot;&nbsp;&nbsp;
+        {% if translation_type == "ai" %}
+        {% if page.lang == "en" %}
+        Translated from Russian with AI
+        {% elif page.lang == "ru" %}
+        Переведено с английского с помощью ИИ
+        {% endif %}
+        {% else %}
+        {% if page.lang == "en" %}
+        Translated from Russian
+        {% elif page.lang == "ru" %}
+        Перевод с английского
+        {% endif %}
+        {% endif %}
         {% endif %}
         {% if page.translations %}
-            {% for translation in page.translations %}
-                {% if is_original %}
-                    {% if page.lang == "en" and translation.lang == "ru" %}
-                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Читать перевод</a>
-                    {% elif page.lang == "ru" and translation.lang == "en" %}
-                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Read translation</a>
-                    {% endif %}
-                {% else %}
-                    {% if page.lang == "en" and translation.lang == "ru" %}
-                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Читать оригинал</a>
-                    {% elif page.lang == "ru" and translation.lang == "en" %}
-                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Read English original</a>
-                    {% endif %}
-                {% endif %}
-            {% endfor %}
+        {% for translation in page.translations %}
+        {% if is_original %}
+        {% if page.lang == "en" and translation.lang == "ru" %}
+        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Читать перевод</a>
+        {% elif page.lang == "ru" and translation.lang == "en" %}
+        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Read translation</a>
+        {% endif %}
+        {% else %}
+        {% if page.lang == "en" and translation.lang == "ru" %}
+        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Читать оригинал</a>
+        {% elif page.lang == "ru" and translation.lang == "en" %}
+        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Read English original</a>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
         {% endif %}
     </div>
 
     {{ page.content | safe }}
 
-    <div class="go-back-link">
-        <a href="{% if lang == "ru" %}/ru/{% else %}/{% endif %}" class="home-link">← {% if lang == "ru" %}Главная{% else %}Home{% endif %}</a>
+    <div class="post-footer">
+        <a href="{% if lang == " ru" %}/ru/{% else %}/{% endif %}" class="post-nav-link">← {% if lang == "ru"
+            %}Главная{% else %}Home{% endif %}</a>
+        {% if page.higher %}
+        <div>
+            <a href="{{ page.higher.permalink }}" class="post-nav-link">
+                {{ page.higher.title }} →
+            </a>
+        </div>
+        {% endif %}
     </div>
 </article>
 {% endblock content %}
