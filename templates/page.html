@@ -42,11 +42,27 @@
             {{ page.date | date(format="%Y-%m-%d, %A") }}
         {% endif %}
         {% set_global is_original = false %}
+        {% set_global tag_count = 0 %}
         {% for key, value in page.taxonomies %}
-            {% if key == "tags" and "original-lang" in value %}
-                {% set_global is_original = true %}
+            {% if key == "tags" %}
+                {% if "original-lang" in value %}
+                    {% set_global is_original = true %}
+                    {% set_global tag_count = tag_count + 1 %}
+                {% endif %}
+                {% if "human-translation" in value %}
+                    {% set_global tag_count = tag_count + 1 %}
+                {% endif %}
+                {% if "ai-translation" in value %}
+                    {% set_global tag_count = tag_count + 1 %}
+                {% endif %}
             {% endif %}
         {% endfor %}
+        
+        {% if tag_count > 1 %}
+            {{ throw(message="VALIDATION ERROR: Multiple translation tags found in " ~ page.relative_path ~ "! Posts must have exactly one of: original-lang, human-translation, ai-translation") }}
+        {% elif tag_count == 0 %}
+            {{ throw(message="VALIDATION ERROR: No translation tag found in " ~ page.relative_path ~ "! Posts must have one of: original-lang, human-translation, ai-translation") }}
+        {% endif %}
         
         {% if page.translations %}
             {% for translation in page.translations %}
