@@ -44,9 +44,9 @@
         {% if page.translations %}
             {% for translation in page.translations %}
                 {% if translation.lang == "ru" and page.lang == "en" %}
-                    &nbsp;&middot;&nbsp;<a href="{{ translation.permalink }}">Перевод на русский</a>
+                    &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Перевод на русский</a>
                 {% elif translation.lang == "en" and page.lang == "ru" %}
-                    &nbsp;&middot;&nbsp;<a href="{{ translation.permalink }}">Оригинал на английском</a>
+                    &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Original in English</a>
                 {% endif %}
             {% endfor %}
         {% endif %}
