@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Posts</h2>
+<h2>Posts <a href="/atom.xml" style="text-decoration: none; color: inherit; font-size: 1rem; vertical-align: middle;" title="RSS Feed"><i class="fas fa-rss"></i></a></h2>
 {% set section = get_section(path="posts/_index.md") %}
 {% for page in section.pages %}
 <div class="post-entry">
