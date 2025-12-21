@@ -1,25 +1,19 @@
-# The URL of the site
+# zola config
 base_url = "/"
 # base_url = "https://vrslev.com"
-
-# The site title
 title = "Lev Vereshchagin"
-
-# The default language of the site
+description = "Lev's blog"
 default_language = "en"
-
-# Whether to generate a feed file
+minify_html = true
 generate_feeds = true
 
-# The number of articles to include in the feed
-feed_limit = 20
-
-# Syntax highlighting
 [markdown]
 highlight_code = true
-
 highlight_theme = "css"
 highlight_themes_css = [
     { theme = "visual-studio-dark", filename = "syntax-theme-dark.css" },
     { theme = "OneHalfLight", filename = "syntax-theme-light.css" },
 ]
+external_links_target_blank = true
+lazy_async_image = true
+bottom_footnotes = true
