@@ -3,6 +3,7 @@
 {% block content %}
 <h2>Posts <a href="/atom.xml" class="rss-link" title="RSS Feed"><i class="fas fa-rss"></i></a></h2>
 {% set section = get_section(path="posts/_index.md") %}
+<div class="post-items">
 {% for page in section.pages %}
 <div class="post-item">
     <div class="post-item-header">
@@ -16,6 +17,7 @@
     </div>
 </div>
 {% endfor %}
+</div>
 
 <hr>
 
@@ -40,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <img src="https://avatars.githubusercontent.com/u/75225148" alt="Avatar" class="avatar avatar-spacing">
+        <img src="https://avatars.githubusercontent.com/u/75225148" alt="Avatar" class="avatar">
     </div>
 </div>
 {% endblock content %}
