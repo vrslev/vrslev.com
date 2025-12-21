@@ -83,15 +83,15 @@
             {% for translation in page.translations %}
                 {% if is_original %}
                     {% if page.lang == "en" and translation.lang == "ru" %}
-                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Перевод на русский</a>
+                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Читать перевод</a>
                     {% elif page.lang == "ru" and translation.lang == "en" %}
-                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Translation to English</a>
+                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Read translation</a>
                     {% endif %}
                 {% else %}
                     {% if page.lang == "en" and translation.lang == "ru" %}
-                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Оригинал на русском</a>
+                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Читать оригинал</a>
                     {% elif page.lang == "ru" and translation.lang == "en" %}
-                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Original in English</a>
+                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Read English original</a>
                     {% endif %}
                 {% endif %}
             {% endfor %}

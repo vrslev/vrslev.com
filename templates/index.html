@@ -101,7 +101,7 @@
     }
 </style>
 
-<h2>Posts <a href="{% if lang == " ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed"
+<h2>{% if lang == "ru" %}Посты{% else %}Posts{% endif %} <a href="{% if lang == " ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed"
         style="float: right;"><i class="fas fa-rss"></i></a>
 </h2>
 {% if lang == "ru" %}
