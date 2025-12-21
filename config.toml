@@ -1,6 +1,6 @@
 # zola config
-base_url = "/"
-# base_url = "https://vrslev.com"
+# base_url = "/"
+base_url = "https://vrslev.com"
 title = "Lev Vereshchagin"
 description = "Lev's blog"
 default_language = "en"
