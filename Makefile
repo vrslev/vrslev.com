@@ -1,4 +1,4 @@
-.PHONY: build serve clean check
+.PHONY: build serve check
 
 build:
 	zola build
