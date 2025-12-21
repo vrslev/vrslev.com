@@ -6,6 +6,7 @@ description = "Lev's blog"
 default_language = "en"
 minify_html = true
 generate_feeds = true
+author = "Lev Vereshchagin"
 
 [markdown]
 highlight_code = true
