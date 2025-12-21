@@ -22,6 +22,7 @@
             --space-xl: 2rem;
             --space-xxl: 3rem;
             --space-3xl: 4rem;
+            --space-4xl: 5rem;
         }
 
         /* Base styles */
@@ -89,14 +90,14 @@
         code {
             background-color: var(--color-code-bg);
             padding: 0.2rem 0.4rem;
-            border-radius: 3px;
+            border-radius: var(--space-xxs);
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
         }
 
         pre {
             background-color: var(--color-code-bg);
-            padding: 0.8rem;
-            border-radius: 6px;
+            padding: var(--space-sm);
+            border-radius: var(--space-xs);
             overflow-x: auto;
         }
 
@@ -112,7 +113,7 @@
 
         .header-text h1 {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: var(--space-lg);
         }
 
         .header-text p {
@@ -122,8 +123,8 @@
 
         /* Avatar */
         .avatar {
-            width: 80px;
-            height: 80px;
+            width: var(--space-4xl);
+            height: var(--space-4xl);
             border-radius: 50%;
             margin-top: var(--space-3xs);
         }
@@ -153,7 +154,6 @@
         .post-date {
             width: 7rem;
             flex-shrink: 0;
-            font-size: 0.9rem;
             color: var(--color-text-secondary);
             line-height: 1.4;
         }
@@ -166,7 +166,6 @@
         .post-description {
             margin-top: var(--space-xxs);
             color: var(--color-text-secondary);
-            font-size: 0.9rem;
             line-height: 1.4;
         }
 
@@ -183,7 +182,6 @@
 
         .about-text p {
             margin: 0 0 var(--space-3xs) 0;
-            /* line-height: 1.3; */
         }
 
         .about-contact {
@@ -234,7 +232,6 @@
         }
 
         .post-meta {
-            font-size: 0.9rem;
             color: var(--color-text-secondary);
         }
 
