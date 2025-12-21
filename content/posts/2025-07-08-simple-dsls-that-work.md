@@ -1,6 +1,7 @@
 +++
 date = 2025-07-08T14:34:43+03:00
 title = "Simple DSLs That Work"
+taxonomies.tags = ["python", "dsl", "testing", "documentation", "original-lang"]
 +++
 
 A year ago, I released [auto-typing-final](https://github.com/community-of-python/auto-typing-final), a fixer and linter enforcing Raiffeisenbank Russia Python Community [style-guide](https://github.com/community-of-python/pylines/blob/6a9fa5d46c46fecce66749760ad745d64e1c2c14/code-style.md) rule to “use `typing.Final` for constants.” It’s now integrated throughout our codebase (there’s even a VS Code extension).

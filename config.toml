@@ -8,11 +8,17 @@ minify_html = true
 generate_feeds = true
 author = "Lev Vereshchagin"
 feed_filenames = ["atom.xml", "rss.xml"]
+taxonomies = [
+    { name = "tags", feed = true },
+]
 
 [languages.ru]
 title = "Лев Верещагин"
 description = "Блог Льва"
 generate_feeds = true
+taxonomies = [
+    { name = "tags", feed = true },
+]
 
 [markdown]
 highlight_code = true

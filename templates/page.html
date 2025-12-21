@@ -41,12 +41,27 @@
         {% else %}
             {{ page.date | date(format="%Y-%m-%d, %A") }}
         {% endif %}
+        {% set_global is_original = false %}
+        {% for key, value in page.taxonomies %}
+            {% if key == "tags" and "original-lang" in value %}
+                {% set_global is_original = true %}
+            {% endif %}
+        {% endfor %}
+        
         {% if page.translations %}
             {% for translation in page.translations %}
-                {% if translation.lang == "ru" and page.lang == "en" %}
-                    &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Перевод на русский</a>
-                {% elif translation.lang == "en" and page.lang == "ru" %}
-                    &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Original in English</a>
+                {% if is_original %}
+                    {% if page.lang == "en" and translation.lang == "ru" %}
+                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Перевод на русский</a>
+                    {% elif page.lang == "ru" and translation.lang == "en" %}
+                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Translation to English</a>
+                    {% endif %}
+                {% else %}
+                    {% if page.lang == "en" and translation.lang == "ru" %}
+                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Оригинал на русском</a>
+                    {% elif page.lang == "ru" and translation.lang == "en" %}
+                        &nbsp;&middot;&nbsp;&nbsp;<a href="{{ translation.permalink }}">Original in English</a>
+                    {% endif %}
                 {% endif %}
             {% endfor %}
         {% endif %}
