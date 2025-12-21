@@ -96,15 +96,12 @@
         vertical-align: middle;
     }
 
-    /* Language switcher */
-    .language-switcher {
-        text-align: left;
-        margin: var(--size-lg) 0;
-    }
+
 </style>
 
-<h2>{% if lang == "ru" %}Посты{% else %}Posts{% endif %} <a href="{% if lang == " ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed"
-        style="float: right;"><i class="fas fa-rss"></i></a>
+<h2>{% if lang == "ru" %}Посты{% else %}Posts{% endif %} 
+    <a href="{% if lang == " ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed" style="color: var(--color-text-secondary); font-size: 1rem; font-weight: normal; margin-left: 1rem;"><i class="fas fa-rss"></i></a>
+    <a href="{% if lang == "ru" %}/{% else %}/ru/{% endif %}" style="float: right; color: var(--color-text-secondary); font-size: 1rem; font-weight: normal;">{% if lang == "ru" %}Read in English{% else %}Читать на русском{% endif %}</a>
 </h2>
 {% if lang == "ru" %}
 {% set posts_section = get_section(path="posts/_index.ru.md") %}
@@ -155,11 +152,4 @@
 
 <hr>
 
-<div class="language-switcher">
-    {% if lang == "ru" %}
-    <a href="/">Read in English</a>
-    {% else %}
-    <a href="/ru/">Читать на русском</a>
-    {% endif %}
-</div>
 {% endblock content %}
