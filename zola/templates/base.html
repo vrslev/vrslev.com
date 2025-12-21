@@ -219,7 +219,7 @@
         }
 
         /* Hide tables until JavaScript has processed them to prevent flicker */
-        table {
+        table:not(pre table) {
             visibility: hidden;
         }
 
@@ -277,6 +277,7 @@
             content: attr(data-name);
             display: block;
             color: var(--color-text-secondary);
+            margin-bottom: var(--size-xs);
         }
 
 
@@ -456,8 +457,8 @@
         document.documentElement.classList.add('js-loading');
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Find all tables and wrap them in a scrollable container
-            const tables = document.querySelectorAll('table');
+            // Find all tables that are not inside code blocks and wrap them in a scrollable container
+            const tables = document.querySelectorAll('table:not(pre table)');
             tables.forEach(table => {
                 // Create a container for horizontal scrolling
                 const container = document.createElement('div');
