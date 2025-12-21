@@ -388,21 +388,21 @@
             text-decoration: none;
             color: inherit;
         }
+
         .header-name:hover {
             text-decoration: none;
         }
 
-    /* Header */
-    .header-text h1 {
-        margin: 0;
-        font-size: var(--size-lg);
-    }
+        /* Header */
+        .header-text h1 {
+            margin: 0;
+            font-size: var(--size-lg);
+        }
 
-    .header-text p {
-        margin: 0;
-        color: var(--color-text-secondary);
-    }
-    
+        .header-text p {
+            margin: 0;
+            color: var(--color-text-secondary);
+        }
     </style>
     <script>
         // Hide main content initially to prevent flicker
@@ -422,10 +422,7 @@
                 }
             });
         }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            addHeaderLinks();
-
+        function fixTables() {
             // Find all tables that are not inside code blocks and wrap them in a scrollable container
             const tables = document.querySelectorAll('table:not(pre table)');
             tables.forEach(table => {
@@ -438,6 +435,12 @@
                 // Move the table into the container
                 container.appendChild(table);
             });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            addHeaderLinks();
+            fixTables()
+
 
             // Remove loading class to reveal content
             document.documentElement.classList.remove('js-loading');
