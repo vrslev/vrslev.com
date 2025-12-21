@@ -19,8 +19,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Build only
-        uses: shalzz/zola-deploy-action@v0.21.0
+      - uses: actions/checkout@v4
+      - uses: shalzz/zola-deploy-action@v0.21.0
         env:
           BUILD_ONLY: true
           CHECK_LINKS: true
