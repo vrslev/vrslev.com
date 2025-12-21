@@ -12,3 +12,13 @@ generate_feeds = true
 
 # The number of articles to include in the feed
 feed_limit = 20
+
+# Syntax highlighting
+[markdown]
+highlight_code = true
+
+highlight_theme = "css"
+highlight_themes_css = [
+    { theme = "visual-studio-dark", filename = "syntax-theme-dark.css" },
+    { theme = "OneHalfLight", filename = "syntax-theme-light.css" },
+]
