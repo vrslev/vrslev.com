@@ -184,42 +184,41 @@
             margin: var(--size-lg) 0;
             -webkit-overflow-scrolling: touch;
         }
-        
+
         .table-container table {
-            width: max-content;
-            min-width: 100%;
+            width: 100%;
             margin: 0;
             border-collapse: collapse;
-            display: table;
+            table-layout: auto;
         }
-        
+
         /* Hide tables until JavaScript has processed them to prevent flicker */
         table {
             visibility: hidden;
         }
-        
+
         /* Show tables after they've been wrapped in containers */
         .table-container table {
             visibility: visible;
         }
-        
+
         th {
             background-color: var(--color-code-bg);
             padding: var(--size-sm);
             text-align: left;
             font-weight: 600;
         }
-        
+
         td {
             padding: var(--size-sm);
             border-top: 1px solid var(--color-border);
         }
-        
+
         td {
             padding: var(--size-sm);
             border-top: 1px solid var(--color-border);
         }
-        
+
         tr:first-child td {
             border-top: 0;
         }
@@ -227,17 +226,24 @@
         /* Code blocks */
         code {
             background-color: var(--color-code-bg);
-            padding: 0.2rem 0.4rem;
+            padding: 0.1rem 0.3rem;
             border-radius: var(--size-xxs);
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
         }
 
         pre {
             background-color: var(--color-code-bg);
-            padding: var(--size-sm);
-            border-radius: var(--size-xs);
+            padding: var(--size-xs);
+            border-radius: var(--size-xxs);
             overflow-x: auto;
-            margin: var(--size-lg) 0;
+            margin: var(--size-md) 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            font-size: 0.9em;
         }
 
         pre code {
@@ -374,7 +380,7 @@
     <script>
         // Hide main content initially to prevent flicker
         document.documentElement.classList.add('js-loading');
-        
+
         document.addEventListener('DOMContentLoaded', function() {
             // Find all tables and wrap them in a scrollable container
             const tables = document.querySelectorAll('table');
@@ -382,13 +388,13 @@
                 // Create a container for horizontal scrolling
                 const container = document.createElement('div');
                 container.className = 'table-container';
-                
+
                 // Insert the container before the table
                 table.parentNode.insertBefore(container, table);
                 // Move the table into the container
                 container.appendChild(table);
             });
-            
+
             // Remove loading class to reveal content
             document.documentElement.classList.remove('js-loading');
         });
