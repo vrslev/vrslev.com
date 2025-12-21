@@ -30,7 +30,7 @@
     <div class="post-meta">
         {% if lang == "ru" %}
             {% set english_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
-            {% set russian_days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"] %}
+            {% set russian_days = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"] %}
             {% set english_day = page.date | date(format="%A") %}
             {% for i in range(end=7) %}
                 {% if english_days[i] == english_day %}
