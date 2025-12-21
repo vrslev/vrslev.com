@@ -4,9 +4,16 @@
 <h2>Posts <a href="/atom.xml" style="text-decoration: none; color: inherit; font-size: 1rem; vertical-align: middle;" title="RSS Feed"><i class="fas fa-rss"></i></a></h2>
 {% set section = get_section(path="posts/_index.md") %}
 {% for page in section.pages %}
-<div class="post-entry">
-    <div class="date-title">{{ page.date | date(format="%Y-%m-%d") }}    <a href="{{ page.permalink }}">{{ page.title }}</a></div>
-    <div class="description">{{ page.description }}</div>
+<div style="margin-bottom: 1rem;">
+    <div style="display: flex;">
+        <span style="display: inline-block; width: 120px; flex-shrink: 0;">{{ page.date | date(format="%Y-%m-%d") }}</span>
+        <div>
+            <a href="{{ page.permalink }}" style="text-decoration: none;">{{ page.title }}</a>
+            {% if page.description %}
+            <div style="margin-top: 0.2rem; color: #666; font-size: 0.9rem;">{{ page.description }}</div>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endfor %}
 
