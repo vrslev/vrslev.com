@@ -94,7 +94,7 @@
 
         /* Header */
         header {
-            margin-bottom: var(--space-lg);
+            margin-bottom: var(--space-sm);
         }
 
         .header-text h1 {
@@ -103,7 +103,7 @@
         }
 
         .header-text p {
-            margin: var(--space-3xs) 0 0 0;
+            margin: 0;
             color: var(--color-text-secondary);
         }
 
@@ -167,22 +167,35 @@
             flex-grow: 1;
         }
 
+        .about-text p {
+            margin: 0 0 var(--space-3xs) 0;
+            /* line-height: 1.3; */
+        }
+
         .about-contact {
-            margin-top: var(--space-md);
+            margin-top: var(--space-3xs);
+            margin-bottom: 0;
+            padding-top: 0;
         }
 
         .contact-label {
-            margin-bottom: var(--space-xxs);
+            margin: 0 0 var(--space-3xs) 0;
+            /* line-height: 1; */
+            padding: 0;
         }
 
         .contact-links {
             display: flex;
-            gap: var(--space-xs);
+            gap: var(--space-md);
+            margin: 0;
+            padding: 0;
         }
 
         .contact-link {
             text-decoration: none;
             color: inherit;
+            margin: 0;
+            padding: 0;
         }
 
         .avatar {
