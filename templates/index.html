@@ -5,34 +5,7 @@
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-    /* About section */
-    .about-section {
-        margin-bottom: var(--size-xl);
-    }
-
-    .about-section h2 {
-        margin-top: 0;
-    }
-
-    .about-content {
-        display: flex;
-        gap: var(--size-lg);
-        align-items: flex-start;
-    }
-
-    .about-main {
-        flex: 1;
-        text-wrap: balance;
-
-    }
-
-    .about-text {
-        flex-grow: 1;
-    }
-
-    .about-text>* {
-        margin: 0 0 var(--size-3xs) 0;
-    }
+    
 
     /* Avatar */
     .avatar {
@@ -90,6 +63,18 @@
         color: var(--color-link);
     }
 
+    /* About section */
+    .about-section {
+        display: flex;
+        gap: var(--size-lg);
+        align-items: flex-start;
+        margin-bottom: var(--size-md);
+    }
+
+    .about-section h2 {
+        margin-top: 0;
+    }
+
     .rss-link {
         text-decoration: none;
         color: inherit;
@@ -124,36 +109,36 @@
 
 <hr>
 
-<div class="about-section">
-    <h2>{% if lang == "ru" %}Обо мне{% else %}About me{% endif %}</h2>
-    <div class="about-content">
 
-        <div class="about-main">
-            <div class="about-text">
-                <p>{% if lang == "ru" %}Привет! Я Лев Верещагин, разработчик.{% else %}Hi! I'm Lev Vereshchagin,
-                    Software
-                    Developer.{%
-                    endif %}</p>
-                <p>{% if lang == "ru" %}Я занимаюсь Python-разработкой и создаю инструменты, которые упрощают жизнь
-                    разработчикам. Мне нравится автоматизировать рутинные задачи и улучшать рабочие процессы.{% else %}I
-                    do Python development and build tools that make developers' lives easier. I enjoy automating routine
-                    tasks and improving workflows.{% endif %}</p>
-                <div class="contact-links">
-                    <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" class="contact-link">
-                        <i class="fa-brands fa-github fa-2x"></i>
-                    </a>
-                    <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram" class="contact-link">
-                        <i class="fa-brands fa-telegram fa-2x"></i>
-                    </a>
-                    <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail" class="contact-link">
-                        <i class="fa-regular fa-envelope fa-2x"></i>
-                    </a>
-                </div>
+
+<div class="about-section">
+    <div>
+        <h2>{% if lang == "ru" %}Обо мне{% else %}About me{% endif %}</h2>
+        <div>
+            <p>{% if lang == "ru" %}Привет! Я Лев Верещагин, разработчик.{% else %}Hi! I'm Lev Vereshchagin,
+                Software
+                Developer.{%
+                endif %}</p>
+            <p>{% if lang == "ru" %}Я занимаюсь Python-разработкой и создаю инструменты, которые упрощают жизнь
+                разработчикам. Мне нравится автоматизировать рутинные задачи и улучшать рабочие процессы.{% else %}I
+                do Python development and build tools that make developers' lives easier. I enjoy automating routine
+                tasks and improving workflows.{% endif %}</p>
+            <div class="contact-links">
+                <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" class="contact-link">
+                    <i class="fa-brands fa-github fa-2x"></i>
+                </a>
+                <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram" class="contact-link">
+                    <i class="fa-brands fa-telegram fa-2x"></i>
+                </a>
+                <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail" class="contact-link">
+                    <i class="fa-regular fa-envelope fa-2x"></i>
+                </a>
             </div>
-        </div><img src="https://avatars.githubusercontent.com/u/75225148" alt="{% if lang == " ru" %}Аватар{% else
-            %}Avatar{% endif %}" class="avatar" loading="lazy">
+        </div>
     </div>
-</div>
+    <img src="https://avatars.githubusercontent.com/u/75225148" alt="{% if lang == " ru" %}Аватар{% else
+        %}Avatar{% endif %}" class="avatar" loading="lazy" style="margin: 0;">
+    </div>
 </div>
 
 <hr>
