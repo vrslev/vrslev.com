@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,22 +8,24 @@
     <meta name="description" content="Lev Vereshchagin's personal website">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- CSS -->
     <style>
         /* Spacing system */
         :root {
-            --space-3xs: 0.125rem;
-            --space-xxs: 0.25rem;
-            --space-xs: 0.5rem;
-            --space-sm: 0.75rem;
-            --space-md: 1rem;
-            --space-lg: 1.5rem;
-            --space-xl: 2rem;
-            --space-xxl: 3rem;
-            --space-3xl: 4rem;
-            --space-4xl: 5rem;
+            --size-3xs: 0.125rem;
+            --size-xxs: 0.25rem;
+            --size-xs: 0.5rem;
+            --size-sm: 0.75rem;
+            --size-md: 1rem;
+            --size-lg: 1.5rem;
+            --size-xl: 2rem;
+            --size-xxl: 3rem;
+            --size-3xl: 4rem;
+            --size-4xl: 5rem;
         }
 
         /* Color system */
@@ -52,7 +55,7 @@
             line-height: 1.7;
             max-width: 42rem;
             margin: 0 auto;
-            padding: var(--space-md);
+            padding: var(--size-md);
             color: var(--color-text-primary);
             background-color: var(--color-bg-primary);
         }
@@ -60,10 +63,15 @@
 
 
         /* Headers */
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             line-height: 1.2;
-            margin-top: var(--space-lg);
-            margin-bottom: var(--space-md);
+            margin-top: var(--size-lg);
+            margin-bottom: var(--size-md);
         }
 
         h1 {
@@ -92,14 +100,14 @@
         code {
             background-color: var(--color-code-bg);
             padding: 0.2rem 0.4rem;
-            border-radius: var(--space-xxs);
+            border-radius: var(--size-xxs);
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
         }
 
         pre {
             background-color: var(--color-code-bg);
-            padding: var(--space-sm);
-            border-radius: var(--space-xs);
+            padding: var(--size-sm);
+            border-radius: var(--size-xs);
             overflow-x: auto;
         }
 
@@ -110,12 +118,12 @@
 
         /* Header */
         header {
-            margin-bottom: var(--space-sm);
+            margin-bottom: var(--size-sm);
         }
 
         .header-text h1 {
             margin: 0;
-            font-size: var(--space-lg);
+            font-size: var(--size-lg);
         }
 
         .header-text p {
@@ -125,27 +133,27 @@
 
         /* Avatar */
         .avatar {
-            width: var(--space-4xl);
-            height: var(--space-4xl);
+            width: var(--size-4xl);
+            height: var(--size-4xl);
             border-radius: 50%;
-            margin-top: var(--space-3xs);
+            margin-top: var(--size-3xs);
         }
 
         /* Horizontal rules */
         hr {
-            margin: var(--space-lg) 0;
+            margin: var(--size-lg) 0;
             border: 0;
             border-top: 1px solid var(--color-border);
         }
 
         /* Content sections */
         .content-section {
-            margin-bottom: var(--space-xl);
+            margin-bottom: var(--size-xl);
         }
 
         /* Post items */
         .post-item {
-            margin-bottom: var(--space-sm);
+            margin-bottom: var(--size-sm);
         }
 
         .post-item-header {
@@ -166,7 +174,7 @@
         }
 
         .post-description {
-            margin-top: var(--space-xxs);
+            margin-top: var(--size-xxs);
             color: var(--color-text-secondary);
             line-height: 1.4;
         }
@@ -175,7 +183,7 @@
         .about-content {
             display: flex;
             align-items: flex-start;
-            gap: var(--space-lg);
+            gap: var(--size-lg);
         }
 
         .about-text {
@@ -183,23 +191,23 @@
         }
 
         .about-text p {
-            margin: 0 0 var(--space-3xs) 0;
+            margin: 0 0 var(--size-3xs) 0;
         }
 
         .about-contact {
-            margin-top: var(--space-3xs);
+            margin-top: var(--size-3xs);
             margin-bottom: 0;
             padding-top: 0;
         }
 
         .contact-label {
-            margin: 0 0 var(--space-xs) 0;
+            margin: 0 0 var(--size-xs) 0;
             padding: 0;
         }
 
         .contact-links {
             display: flex;
-            gap: var(--space-sm);
+            gap: var(--size-sm);
             margin: 0;
             padding: 0;
         }
@@ -230,16 +238,15 @@
         }
 
         .go-back-link {
-            margin-top: var(--space-xl);
+            margin-top: var(--size-xl);
         }
 
         .post-meta {
             color: var(--color-text-secondary);
         }
-
-
     </style>
 </head>
+
 <body>
     <header>
         <div class="header-text">
@@ -253,4 +260,5 @@
         {% block content %}{% endblock content %}
     </main>
 </body>
+
 </html>
