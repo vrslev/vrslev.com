@@ -58,6 +58,8 @@
             padding: var(--size-md);
             color: var(--color-text-primary);
             background-color: var(--color-bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
 
@@ -71,7 +73,7 @@
         h6 {
             line-height: 1.2;
             margin-top: var(--size-lg);
-            margin-bottom: var(--size-md);
+            margin-bottom: var(--size-sm);
         }
 
         h1 {
@@ -115,6 +117,66 @@
             text-decoration: underline;
         }
 
+        /* Blockquotes */
+        blockquote {
+            margin: var(--size-md) 0;
+            padding: 0 0 0 var(--size-sm);
+            border-left: 2px solid var(--color-border);
+            color: var(--color-text-secondary);
+            font-style: normal;
+        }
+
+        blockquote blockquote {
+            border-left: 2px solid var(--color-border);
+        }
+
+        /* Typography */
+        p {
+            margin: 0 0 var(--size-md) 0;
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin: 0 0 var(--size-sm) 0;
+            padding-left: var(--size-lg);
+        }
+
+        li {
+            margin: var(--size-xxs) 0;
+        }
+
+        /* Nested lists */
+        ul ul,
+        ol ul,
+        ul ol,
+        ol ol {
+            margin: var(--size-md) 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--size-lg) 0;
+        }
+
+        th {
+            background-color: var(--color-code-bg);
+            padding: var(--size-sm);
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: var(--size-sm);
+            border-top: 1px solid var(--color-border);
+        }
+
+        tr:first-child td {
+            border-top: 0;
+        }
+
         /* Code blocks */
         code {
             background-color: var(--color-code-bg);
@@ -128,6 +190,7 @@
             padding: var(--size-sm);
             border-radius: var(--size-xs);
             overflow-x: auto;
+            margin: var(--size-lg) 0;
         }
 
         pre code {
@@ -209,7 +272,7 @@
             flex-grow: 1;
         }
 
-        .about-text > * {
+        .about-text>* {
             margin: 0 0 var(--size-3xs) 0;
         }
 
@@ -258,6 +321,7 @@
 
         .post-meta {
             color: var(--color-text-secondary);
+            margin-bottom: var(--size-lg);
         }
     </style>
 </head>

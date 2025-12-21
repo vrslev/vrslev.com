@@ -50,13 +50,13 @@ server:
 
 Our REST API uses standard HTTP methods:
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/v1/users` | List all users |
-| POST | `/api/v1/users` | Create a new user |
-| GET | `/api/v1/users/{id}` | Get a specific user |
-| PUT | `/api/v1/users/{id}` | Update a user |
-| DELETE | `/api/v1/users/{id}` | Delete a user |
+| Method | Endpoint | Description | Parameters | Auth Required | Response Code | Example | Rate Limit | Caching |
+|--------|----------|-------------|------------|---------------|---------------|---------|------------|---------|
+| GET | `/api/v1/users` | List all users | `page`, `limit`, `sort` | No | 200 | `{"users": [], "total": 0}` | 100/min | 60s |
+| POST | `/api/v1/users` | Create a new user | `name`, `email` | Yes | 201 | `{"id": 1, "name": "John", "email": "john@example.com"}` | 10/min | None |
+| GET | `/api/v1/users/{id}` | Get a specific user | `id` | No | 200 | `{"id": 1, "name": "John", "email": "john@example.com"}` | 100/min | 300s |
+| PUT | `/api/v1/users/{id}` | Update a user | `id`, `name`, `email` | Yes | 200 | `{"id": 1, "name": "John Doe", "email": "john@example.com"}` | 10/min | None |
+| DELETE | `/api/v1/users/{id}` | Delete a user | `id` | Yes | 204 | - | 10/min | None |
 
 ## Code Examples
 
@@ -86,14 +86,41 @@ c.users.list().then(users => {
 
 ## Tips for Better Documentation
 
+> "The best documentation is the kind that people actually read. But great documentation goes beyond just being readable - it should be actionable, comprehensive, and maintainable.
+> 
+> Consider this example of a well-documented API endpoint:
+> 
+> ```python
+> def create_user(name: str, email: str) -> User:
+>     """
+>     Create a new user in the system.
+>     
+>     Args:
+>         name: Full name of the user
+>         email: Email address (must be unique)
+>     
+>     Returns:
+>         The created User object
+>     
+>     Raises:
+>         ValueError: If email is invalid
+>         DuplicateEmailError: If email already exists
+>     """
+> ```
+> 
+> Notice how the documentation includes:
+> 
+> - Clear parameter descriptions
+> - Expected return value
+> - Possible exceptions
+> - Type hints for better IDE support
+> 
+> This level of detail helps developers understand not just what the function does, but how to use it correctly."
+
 1. Write for your audience
 2. Keep examples simple but realistic
 3. Include both basic and advanced use cases
 4. Update documentation when code changes
-
-> "The best documentation is the kind that people actually read."
-
-## Conclusion
 
 Great documentation doesn't happen by accident. It requires planning, writing, and maintenance—just like code. By treating documentation as a first-class citizen in your project, you'll create a better experience for everyone involved.
 
