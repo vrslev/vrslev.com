@@ -100,11 +100,8 @@
 
 <h2>{% if lang == "ru" %}Посты{% else %}Posts{% endif %}
     <a href="{% if lang == " ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed"
-        style="color: var(--color-text-secondary); font-size: 1rem; font-weight: normal; margin-left: 1rem;"><i
+        style="color: var(--color-text-secondary); font-size: 1rem; font-weight: normal; float: right;"><i
             class="fas fa-rss"></i></a>
-    <a href="{% if lang == "ru" %}/{% else %}/ru/{% endif %}"
-        style="float: right; color: var(--color-text-secondary); font-size: 1rem; font-weight: normal;">{% if lang ==
-        "ru" %}Read in English{% else %}Читать на русском{% endif %}</a>
 </h2>
 {% if lang == "ru" %}
 {% set posts_section = get_section(path="posts/_index.ru.md") %}
@@ -160,5 +157,9 @@
 </div>
 
 <hr>
+
+<a href="{% if lang == "ru" %}/{% else %}/ru/{% endif %}"
+    style="display: block; color: var(--color-link); font-size: 1rem; font-weight: normal; margin-top: var(--size-md);">{% if lang ==
+    "ru" %}Read in English{% else %}Читать на русском{% endif %}</a>
 
 {% endblock content %}
