@@ -12,8 +12,8 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <link rel="stylesheet" type="text/css" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)" />
-        <link rel="stylesheet" type="text/css" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)" />
+    <link rel="stylesheet" type="text/css" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)" />
+    <link rel="stylesheet" type="text/css" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)" />
     <!-- CSS -->
     <style>
         /* Sizing system */
@@ -274,7 +274,51 @@
 
         pre code {
             background: none;
+        }
+
+        /* Improve line number styling */
+        pre table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+        
+        pre tbody {
+            margin: 0;
+        }
+        
+        pre tr {
+            margin: 0;
+        }
+        
+        pre td {
             padding: 0;
+            border: none;
+            margin: 0;
+        }
+
+        pre td:first-child {
+            padding-right: var(--size-sm);
+            text-align: right;
+            color: var(--color-text-secondary);
+            user-select: none;
+        }
+
+        /* Code column */
+        pre td:last-child {
+            width: 100%;
+        }
+
+        /* Highlighted lines */
+        pre mark {
+            background-color: rgba(0, 0, 0, 0.1) !important;
+            color: inherit !important;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            pre mark {
+                background-color: rgba(255, 255, 255, 0.15) !important;
+            }
         }
 
         /* Header */

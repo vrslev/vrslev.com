@@ -36,7 +36,7 @@ This one-liner installs our tool on most Unix-like systems.
 
 Most applications need configuration. Here's how ours works:
 
-```yaml
+```yaml,linenos,linenostart=20,hl_lines=1 3-5 9,name=mod.rs
 server:
   host: 0.0.0.0
   port: 8080
