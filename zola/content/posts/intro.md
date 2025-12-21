@@ -1,6 +1,6 @@
 +++
 date = 2024-02-02T20:16:52+03:00
-title = "Intro 🎉"
+title = 'Intro 🎉'
 description = "The first post in my blog"
 +++
 
