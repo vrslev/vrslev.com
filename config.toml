@@ -1,0 +1,22 @@
+# zola config
+base_url = "/"
+# base_url = "https://vrslev.com"
+title = "Lev Vereshchagin"
+description = "Lev's blog"
+default_language = "en"
+minify_html = true
+generate_feeds = true
+author = "Lev Vereshchagin"
+feed_filenames = ["atom.xml", "rss.xml"]
+
+[markdown]
+highlight_code = true
+highlight_theme = "css"
+highlight_themes_css = [
+    { theme = "visual-studio-dark", filename = "syntax-theme-dark.css" },
+    { theme = "OneHalfLight", filename = "syntax-theme-light.css" },
+]
+external_links_target_blank = true
+lazy_async_image = true
+bottom_footnotes = true
+insert_anchor_links = "right"

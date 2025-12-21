@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Lev Vereshchagin{% endblock title %}</title>
+    <meta name="description" content="Lev Vereshchagin's personal website">
+    <!-- CSS -->
+    <style>
+        /* Sizing system */
+        :root {
+            --size-3xs: 0.125rem;
+            --size-xxs: 0.25rem;
+            --size-xs: 0.5rem;
+            --size-sm: 0.75rem;
+            --size-md: 1rem;
+            --size-lg: 1.5rem;
+            --size-xl: 2rem;
+            --size-xxl: 3rem;
+            --size-3xl: 4rem;
+            --size-4xl: 5rem;
+        }
+
+        /* Color system */
+        :root {
+            --color-text-primary: #333;
+            --color-text-secondary: #666;
+            --color-bg-primary: #fff;
+            --color-link: #0366d6;
+            --color-code-bg: rgb(250, 250, 250);
+            --color-border: #eee;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-text-primary: #ddd;
+                --color-text-secondary: #aaa;
+                --color-bg-primary: #1a1a1a;
+                --color-link: #569cd6;
+                --color-code-bg: rgb(30, 30, 30);
+                --color-border: #444;
+            }
+        }
+
+        /* Base styles */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: var(--size-md);
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Visual indication for targeted headers */
+        :target {
+            scroll-margin-top: var(--size-md);
+        }
+
+        :target {
+            background-color: var(--color-code-bg);
+        }
+
+        /* Hide content initially when JavaScript is enabled */
+        .js-loading body {
+            display: none;
+        }
+
+
+
+        /* Headers */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: 1.2;
+            margin-top: var(--size-lg);
+            margin-bottom: var(--size-sm);
+        }
+
+        /* Reduce margin when any heading follows another heading */
+        h1+h2,
+        h1+h3,
+        h1+h4,
+        h1+h5,
+        h1+h6,
+        h2+h3,
+        h2+h4,
+        h2+h5,
+        h2+h6,
+        h3+h4,
+        h3+h5,
+        h3+h6,
+        h4+h5,
+        h4+h6,
+        h5+h6 {
+            margin-top: var(--size-md);
+        }
+
+        h1 {
+            font-size: var(--size-lg);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+        }
+
+        h3 {
+            font-size: var(--size-md);
+        }
+
+        h4 {
+            font-size: 0.9rem;
+        }
+
+        h5 {
+            font-size: 0.8rem;
+        }
+
+        h6 {
+            font-size: 0.7rem;
+        }
+
+
+
+        /* Links */
+        a {
+            color: var(--color-link);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Blockquotes */
+        blockquote {
+            margin: var(--size-md) 0;
+            padding: 0 0 0 var(--size-sm);
+            border-left: 2px solid var(--color-border);
+            color: var(--color-text-secondary);
+            font-style: normal;
+        }
+
+        blockquote blockquote {
+            border-left: 2px solid var(--color-border);
+        }
+
+        /* Typography */
+        p {
+            margin: 0 0 var(--size-md) 0;
+        }
+
+        /* Footnotes */
+        .footnote-definition {
+            font-size: 0.9em;
+            margin: var(--size-sm) 0;
+            padding: var(--size-xxs) var(--size-sm);
+            background-color: var(--color-code-bg);
+            border-left: 2px solid var(--color-border);
+            line-height: 1.4;
+        }
+
+        .footnote-definition p {
+            margin: 0;
+            display: inline;
+        }
+
+        .footnote-definition-label {
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .footnote-reference {
+            font-size: 0.8em;
+            margin-left: 0.1rem;
+            text-decoration: none;
+        }
+
+        .footnote-reference:hover {
+            text-decoration: underline;
+        }
+
+        /* Footnotes section at bottom */
+        .footnotes {
+            margin-top: var(--size-xl);
+            padding-top: var(--size-lg);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footnotes::before {
+            content: "Footnotes";
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: var(--size-md);
+        }
+
+        .footnotes ol {
+            padding-left: var(--size-md);
+        }
+
+        .footnotes li {
+            margin-bottom: var(--size-sm);
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            padding-left: var(--size-lg);
+        }
+
+        li {
+            margin: var(--size-xxs) 0;
+        }
+
+        /* Nested lists */
+        ul ul,
+        ol ul,
+        ul ol,
+        ol ol {
+            margin: 0;
+        }
+
+        /* Tables */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin: var(--size-lg) 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .table-container table {
+            width: 100%;
+            margin: 0;
+            border-collapse: collapse;
+            table-layout: auto;
+        }
+
+        /* Hide tables until JavaScript has processed them to prevent flicker */
+        table:not(pre table) {
+            visibility: hidden;
+        }
+
+        /* Show tables after they've been wrapped in containers */
+        .table-container table {
+            visibility: visible;
+        }
+
+        th {
+            background-color: var(--color-code-bg);
+            padding: var(--size-sm);
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: var(--size-sm);
+            border-top: 1px solid var(--color-border);
+        }
+
+        td {
+            padding: var(--size-sm);
+            border-top: 1px solid var(--color-border);
+        }
+
+        tr:first-child td {
+            border-top: 0;
+        }
+
+        /* Code blocks */
+        code {
+            background-color: var(--color-code-bg);
+            padding: 0.1rem 0.3rem;
+            border-radius: var(--size-xxs);
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background-color: var(--color-code-bg);
+            padding: var(--size-xs);
+            border-radius: 0;
+            overflow-x: auto;
+            margin: var(--size-md) 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            font-size: 0.9em;
+        }
+
+        /* File name header for code blocks */
+        pre[data-name]::before {
+            content: attr(data-name);
+            display: block;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--size-xs);
+        }
+
+
+        /* Improve line number styling */
+        pre table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        pre tbody {
+            margin: 0;
+        }
+
+        pre tr {
+            margin: 0;
+        }
+
+        pre td {
+            padding: 0;
+            border: none;
+            margin: 0;
+        }
+
+        pre td:first-child {
+            padding-right: var(--size-sm);
+            text-align: right;
+            color: var(--color-text-secondary);
+            user-select: none;
+        }
+
+        /* Code column */
+        pre td:last-child {
+            width: 100%;
+        }
+
+        /* Highlighted lines */
+        pre mark {
+            background-color: unset;
+            color: inherit;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Ensure highlighted lines span full width */
+        pre tr:has(mark) td {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        /* Dark mode code block improvements */
+        @media (prefers-color-scheme: dark) {
+            pre tr:has(mark) td {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /* Header */
+        header {
+            margin-bottom: var(--size-sm);
+        }
+
+        /* Header links */
+        .zola-anchor {
+            text-decoration: none;
+            color: var(--color-text-secondary);
+            margin-left: var(--size-xs);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        h1:hover .zola-anchor,
+        h2:hover .zola-anchor,
+        h3:hover .zola-anchor,
+        h4:hover .zola-anchor,
+        h5:hover .zola-anchor,
+        h6:hover .zola-anchor {
+            opacity: 1;
+        }
+
+        .zola-anchor:hover {
+            color: var(--color-link);
+        }
+
+        /* Horizontal rules */
+        hr {
+            margin: var(--size-lg) 0;
+            border: 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* Utility classes */
+        .home-link {
+            color: var(--color-link);
+            text-decoration: none;
+        }
+
+        .header-name {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .header-name:hover {
+            text-decoration: none;
+        }
+
+        /* Header */
+        .header-text h1 {
+            margin: 0;
+            font-size: var(--size-lg);
+        }
+
+        .header-text p {
+            margin: 0;
+            color: var(--color-text-secondary);
+        }
+
+        @view-transition {
+            navigation: auto;
+        }
+
+        ::view-transition-old(root) {
+            animation: none;
+        }
+
+        ::view-transition-new(root) {
+            animation: none;
+        }
+    </style>
+    <script>
+        // Hide main content initially to prevent flicker
+        document.documentElement.classList.add('js-loading');
+
+        function fixTables() {
+            // Find all tables that are not inside code blocks and wrap them in a scrollable container
+            const tables = document.querySelectorAll('table:not(pre table)');
+            tables.forEach(table => {
+                // Create a container for horizontal scrolling
+                const container = document.createElement('div');
+                container.className = 'table-container';
+
+                // Insert the container before the table
+                table.parentNode.insertBefore(container, table);
+                // Move the table into the container
+                container.appendChild(table);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            fixTables()
+            document.documentElement.classList.remove('js-loading');
+        });
+    </script>
+
+    <!-- Speculation Rules for faster navigation -->
+    <script type="speculationrules">
+        {
+            "prerender": [{
+                "where": {
+                    "and": [
+                        {"href_matches": "/*"},
+                        {"not": {"selector_matches": "[target]"}}
+                    ]
+                },
+                "eagerness": "moderate"
+            }],
+            "prefetch": [{
+                "where": {
+                    "href_matches": "/*"
+                },
+                "eagerness": "eager"
+            }]
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="header-text">
+            <h1><a href="/" class="header-name">Lev Vereshchagin</a></h1>
+        </div>
+    </header>
+
+    <hr>
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+</body>
+
+</html>
