@@ -496,7 +496,7 @@
 <body>
     <header>
         <div class="header-text">
-            <h1><a href="/" class="header-name">{% if lang == 'ru' %}Лев Верещагин{% else %}Lev Vereshchagin{% endif
+            <h1><a href="{% if lang == 'ru' %}/ru/{% else %}/{% endif %}" class="header-name">{% if lang == 'ru' %}Лев Верещагин{% else %}Lev Vereshchagin{% endif
                     %}</a></h1>
         </div>
     </header>
