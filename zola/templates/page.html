@@ -8,10 +8,10 @@
     <div class="post-meta">
         {{ page.date | date(format="%Y-%m-%d, %A") }}
     </div>
-    
+
     {{ page.content | safe }}
-    
-    <div style="margin-top: var(--space-xl);">
+
+    <div class="go-back-link">
         <a href="/" class="home-link">← Go to Home</a>
     </div>
 </article>
