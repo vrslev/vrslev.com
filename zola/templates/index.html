@@ -4,19 +4,19 @@
 <h2>Posts <a href="/atom.xml" class="rss-link" title="RSS Feed"><i class="fas fa-rss"></i></a></h2>
 {% set section = get_section(path="posts/_index.md") %}
 <div class="post-items">
-{% for page in section.pages %}
-<div class="post-item">
-    <div class="post-item-header">
-        <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-        <div>
-            <a href="{{ page.permalink }}" class="post-title">{{ page.title }}</a>
-            {% if page.description %}
-            <div class="post-description">{{ page.description }}</div>
-            {% endif %}
+    {% for page in section.pages %}
+    <div class="post-item">
+        <div class="post-item-header">
+            <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
+            <div>
+                <a href="{{ page.permalink }}" class="post-title">{{ page.title }}</a>
+                {% if page.description %}
+                <div class="post-description">{{ page.description }}</div>
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
-{% endfor %}
+    {% endfor %}
 </div>
 
 <hr>
@@ -25,21 +25,19 @@
 <div class="content-section">
     <div class="about-content">
         <div class="about-text">
-            <p><strong>Lev Vereshchagin</strong></p>
+            <p>Lev Vereshchagin</p>
             <p>Software Developer</p>
-            <div class="about-contact">
-                <div class="contact-label">Contact:</div>
-                <div class="contact-links">
-                    <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" class="contact-link">
-                        <i class="fa-brands fa-github fa-2x"></i>
-                    </a>
-                    <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram" class="contact-link">
-                        <i class="fa-brands fa-telegram fa-2x"></i>
-                    </a>
-                    <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail" class="contact-link">
-                        <i class="fa-regular fa-envelope fa-2x"></i>
-                    </a>
-                </div>
+            <p>Contact:</p>
+            <div class="contact-links">
+                <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" class="contact-link">
+                    <i class="fa-brands fa-github fa-2x"></i>
+                </a>
+                <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram" class="contact-link">
+                    <i class="fa-brands fa-telegram fa-2x"></i>
+                </a>
+                <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail" class="contact-link">
+                    <i class="fa-regular fa-envelope fa-2x"></i>
+                </a>
             </div>
         </div>
         <img src="https://avatars.githubusercontent.com/u/75225148" alt="Avatar" class="avatar">
