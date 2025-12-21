@@ -11,19 +11,9 @@
 
     <!-- CSS -->
     <style>
-        /* Base styles */
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 42rem;
-            margin: 0 auto;
-            padding: 1rem;
-            color: var(--color-text-primary);
-            background-color: var(--color-bg-primary);
-        }
-
         /* Spacing system */
         :root {
+            --space-3xs: 0.125rem;
             --space-xxs: 0.25rem;
             --space-xs: 0.5rem;
             --space-sm: 0.75rem;
@@ -31,6 +21,18 @@
             --space-lg: 1.5rem;
             --space-xl: 2rem;
             --space-xxl: 3rem;
+            --space-3xl: 4rem;
+        }
+
+        /* Base styles */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 42rem;
+            margin: 0 auto;
+            padding: var(--space-md);
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-primary);
         }
 
         /* Color system */
@@ -92,7 +94,7 @@
 
         /* Header */
         header {
-            margin-bottom: var(--space-xxs);
+            margin-bottom: var(--space-lg);
         }
 
         .header-text h1 {
@@ -101,7 +103,7 @@
         }
 
         .header-text p {
-            margin: 0;
+            margin: var(--space-3xs) 0 0 0;
             color: var(--color-text-secondary);
         }
 
@@ -126,32 +128,39 @@
 
         /* Post items */
         .post-item {
-            margin-bottom: var(--space-md);
+            margin-bottom: var(--space-sm);
         }
 
         .post-item-header {
             display: flex;
+            align-items: baseline;
         }
 
         .post-date {
             width: 7rem;
             flex-shrink: 0;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            line-height: 1.4;
         }
 
         .post-title {
             text-decoration: none;
+            line-height: 1.4;
         }
 
         .post-description {
             margin-top: var(--space-xxs);
             color: var(--color-text-secondary);
             font-size: 0.9rem;
+            line-height: 1.4;
         }
 
         /* About section */
         .about-content {
             display: flex;
             align-items: flex-start;
+            gap: var(--space-lg);
         }
 
         .about-text {
@@ -168,20 +177,16 @@
 
         .contact-links {
             display: flex;
+            gap: var(--space-xs);
         }
 
         .contact-link {
             text-decoration: none;
             color: inherit;
-            margin-right: var(--space-xs);
         }
 
-        .contact-link:last-child {
-            margin-right: 0;
-        }
-
-        .avatar-spacing {
-            margin-left: var(--space-md);
+        .avatar {
+            margin-top: var(--space-3xs);
         }
 
         /* Utility classes */
