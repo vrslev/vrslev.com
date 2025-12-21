@@ -206,7 +206,7 @@
             padding-top: var(--size-lg);
             border-top: 1px solid var(--color-border);
         }
-        
+
         .footnotes::before {
             content: "Footnotes";
             display: block;
@@ -379,7 +379,7 @@
         }
 
         /* Header links */
-        .header-link {
+        .zola-anchor {
             text-decoration: none;
             color: var(--color-text-secondary);
             margin-left: var(--size-xs);
@@ -387,16 +387,16 @@
             transition: opacity 0.2s;
         }
 
-        h1:hover .header-link,
-        h2:hover .header-link,
-        h3:hover .header-link,
-        h4:hover .header-link,
-        h5:hover .header-link,
-        h6:hover .header-link {
+        h1:hover .zola-anchor,
+        h2:hover .zola-anchor,
+        h3:hover .zola-anchor,
+        h4:hover .zola-anchor,
+        h5:hover .zola-anchor,
+        h6:hover .zola-anchor {
             opacity: 1;
         }
 
-        .header-link:hover {
+        .zola-anchor:hover {
             color: var(--color-link);
         }
 
@@ -449,20 +449,6 @@
         // Hide main content initially to prevent flicker
         document.documentElement.classList.add('js-loading');
 
-        // Add header links
-        function addHeaderLinks() {
-            const headers = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-            headers.forEach(header => {
-                if (header.id) {
-                    const link = document.createElement('a');
-                    link.href = '#' + header.id;
-                    link.className = 'header-link';
-                    link.innerHTML = '#';
-                    link.title = 'is section';
-                    header.appendChild(link);
-                }
-            });
-        }
         function fixTables() {
             // Find all tables that are not inside code blocks and wrap them in a scrollable container
             const tables = document.querySelectorAll('table:not(pre table)');
@@ -479,10 +465,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            addHeaderLinks();
             fixTables()
-
-            // Remove loading class to reveal content
             document.documentElement.classList.remove('js-loading');
         });
     </script>

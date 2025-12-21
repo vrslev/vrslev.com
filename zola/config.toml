@@ -17,3 +17,4 @@ highlight_themes_css = [
 external_links_target_blank = true
 lazy_async_image = true
 bottom_footnotes = true
+insert_anchor_links = "right"
