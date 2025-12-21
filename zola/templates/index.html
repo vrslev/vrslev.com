@@ -18,24 +18,27 @@
 {% endfor %}
 
 <h2>About Me</h2>
-<div style="display: flex; align-items: flex-start; margin-bottom: 2rem;">
-    <img src="https://avatars.githubusercontent.com/u/75225148" alt="Avatar" class="avatar" style="margin-right: 1rem;">
-    <div>
-        <p><strong>Lev Vereshchagin</strong></p>
-        <p>Software Developer</p>
+<div style="margin-bottom: 2rem;">
+    <div style="display: flex; align-items: flex-start;">
+        <div style="flex-grow: 1;">
+            <p><strong>Lev Vereshchagin</strong></p>
+            <p>Software Developer</p>
+            <div style="margin-top: 1rem;">
+                <div style="margin-bottom: 0.25rem;">Contact:</div>
+                <div>
+                    <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">
+                        <i class="fa-brands fa-github fa-xl"></i>
+                    </a>
+                    <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram" style="text-decoration: none; color: inherit; margin-right: 0.5rem;">
+                        <i class="fa-brands fa-telegram fa-xl"></i>
+                    </a>
+                    <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail" style="text-decoration: none; color: inherit;">
+                        <i class="fa-regular fa-envelope fa-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <img src="https://avatars.githubusercontent.com/u/75225148" alt="Avatar" class="avatar" style="margin-left: 1rem;">
     </div>
-</div>
-
-<h2>Contact</h2>
-<div class="social-links">
-    <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub">
-        <i class="fa-brands fa-github fa-2x"></i>
-    </a>
-    <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram">
-        <i class="fa-brands fa-telegram fa-2x"></i>
-    </a>
-    <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail">
-        <i class="fa-regular fa-envelope fa-2x"></i>
-    </a>
 </div>
 {% endblock content %}
