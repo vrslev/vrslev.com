@@ -99,7 +99,7 @@
         h4+h5,
         h4+h6,
         h5+h6 {
-            margin-top: var(--size-sm);
+            margin-top: var(--size-md);
         }
 
         h1 {
@@ -272,9 +272,13 @@
             font-size: 0.9em;
         }
 
-        pre code {
-            background: none;
+        /* File name header for code blocks */
+        pre[data-name]::before {
+            content: attr(data-name);
+            display: block;
+            color: var(--color-text-secondary);
         }
+
 
         /* Improve line number styling */
         pre table {
@@ -282,15 +286,15 @@
             border-collapse: collapse;
             margin: 0;
         }
-        
+
         pre tbody {
             margin: 0;
         }
-        
+
         pre tr {
             margin: 0;
         }
-        
+
         pre td {
             padding: 0;
             border: none;
