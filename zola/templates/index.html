@@ -12,19 +12,23 @@
 
 <h2>About Me</h2>
 <div style="display: flex; align-items: flex-start; margin-bottom: 2rem;">
-    <img src="{{ config.extra.avatar_url }}" alt="Avatar" class="avatar" style="margin-right: 1rem;">
+    <img src="https://avatars.githubusercontent.com/u/75225148" alt="Avatar" class="avatar" style="margin-right: 1rem;">
     <div>
-        <p><strong>{{ config.extra.author }}</strong></p>
-        <p>{{ config.extra.info }}</p>
+        <p><strong>Lev Vereshchagin</strong></p>
+        <p>Software Developer</p>
     </div>
 </div>
 
 <h2>Contact</h2>
 <div class="social-links">
-    {% for social in config.extra.socials %}
-        <a href="{{ social.url }}" title="{{ social.name }}" aria-label="{{ social.name }}">
-            <i class="{{ social.icon }}"></i>
-        </a>
-    {% endfor %}
+    <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub">
+        <i class="fa-brands fa-github fa-2x"></i>
+    </a>
+    <a href="https://t.me/vrslev" title="Telegram" aria-label="Telegram">
+        <i class="fa-brands fa-telegram fa-2x"></i>
+    </a>
+    <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail">
+        <i class="fa-regular fa-envelope fa-2x"></i>
+    </a>
 </div>
 {% endblock content %}
