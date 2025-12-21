@@ -43,32 +43,19 @@
             color: #666;
         }
         
-        .social-links {
-            display: flex;
-            justify-content: flex-start;
-            margin: 2rem 0 1rem 0;
-        }
-        
-        .social-links a {
-            margin: 0 0.5rem;
+        a {
+            color: #0366d6;
             text-decoration: none;
-            color: #000000;
         }
         
-        .social-links a:hover {
-            color: #333333;
+        a:hover {
+            text-decoration: underline;
         }
         
-        article {
-            margin-bottom: 1.5rem;
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 1rem;
+            margin-bottom: 0.8rem;
         }
-        
-        .post-meta {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-
         
         code {
             background-color: #f6f8fa;
@@ -89,34 +76,6 @@
             padding: 0;
         }
         
-        a {
-            color: #0366d6;
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            margin-top: 1rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .post-entry {
-            margin-bottom: 0.8rem;
-        }
-        
-        .post-entry .date-title {
-            font-weight: bold;
-        }
-        
-        .post-entry .description {
-            margin: 0.2rem 0 0 0;
-            color: #666;
-            margin-left: 7.5rem; /* Align with title */
-        }
-        
         /* Dark mode styles */
         @media (prefers-color-scheme: dark) {
             body {
@@ -124,17 +83,8 @@
                 background-color: #1a1a1a;
             }
             
-            .header-text p {
-                color: #aaa;
-            }
-            
             hr {
                 border-top: 1px solid #444 !important;
-            }
-            
-            .tag {
-                background-color: #2a2a2a;
-                color: #58a6ff;
             }
             
             code {
@@ -147,22 +97,6 @@
             
             a {
                 color: #58a6ff;
-            }
-            
-            .post-meta {
-                color: #aaa;
-            }
-            
-            .post-entry .description {
-                color: #aaa;
-            }
-            
-            .social-links a {
-                color: #ffffff;
-            }
-            
-            .social-links a:hover {
-                color: #cccccc;
             }
         }
     </style>
