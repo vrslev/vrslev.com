@@ -1,6 +1,90 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+    /* About section */
+    .about-section {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--size-lg);
+        margin-bottom: var(--size-xl);
+    }
+
+    .about-main h2 {
+        margin-top: 0;
+    }
+
+    .about-main {
+        flex: 1;
+    }
+
+    .about-content {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .about-text {
+        flex-grow: 1;
+    }
+
+    .about-text>* {
+        margin: 0 0 var(--size-3xs) 0;
+    }
+
+    /* Avatar */
+    .avatar {
+        width: var(--size-4xl);
+        height: var(--size-4xl);
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    /* Post items */
+    .post-items {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-sm);
+    }
+
+    .post-item-header {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .post-date {
+        width: 7rem;
+        flex-shrink: 0;
+        color: var(--color-text-secondary);
+        line-height: 1.4;
+    }
+
+    .post-title {
+        text-decoration: none;
+        line-height: 1.4;
+    }
+
+    .post-description {
+        margin-top: var(--size-xxs);
+        color: var(--color-text-secondary);
+        line-height: 1.4;
+    }
+
+    .contact-links {
+        display: flex;
+        gap: var(--size-md);
+        margin-top: var(--size-sm)
+    }
+
+    .contact-link {
+        text-decoration: none;
+        color: unset
+    }
+
+    .contact-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
 <h2>Posts <a href="/atom.xml" class="rss-link" title="RSS Feed" style="float: right;"><i class="fas fa-rss"></i></a></h2>
 {% set section = get_section(path="posts/_index.md") %}
 <div class="post-items">

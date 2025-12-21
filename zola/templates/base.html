@@ -140,12 +140,7 @@
             font-size: 0.7rem;
         }
 
-        /* Post title */
-        .page-title {
-            font-size: 2rem;
-            margin-top: 0;
-            margin-bottom: var(--size-xs);
-        }
+
 
         /* Links */
         a {
@@ -349,6 +344,12 @@
             }
         }
 
+        /* Header */
+        header {
+            margin-bottom: var(--size-sm);
+        }
+
+        /* Header links */
         .header-link {
             text-decoration: none;
             color: var(--color-text-secondary);
@@ -356,6 +357,7 @@
             opacity: 0;
             transition: opacity 0.2s;
         }
+
         h1:hover .header-link,
         h2:hover .header-link,
         h3:hover .header-link,
@@ -365,56 +367,8 @@
             opacity: 1;
         }
 
-        /* Header */
-        header {
-            margin-bottom: var(--size-sm);
-        }
-
-        .header-text h1 {
-            margin: 0;
-            font-size: var(--size-lg);
-        }
-
-        .header-text p {
-            margin: 0;
-            color: var(--color-text-secondary);
-        }
-
-        /* About section */
-        .about-section {
-            display: flex;
-            justify-content: space-between;
-            gap: var(--size-lg);
-            margin-bottom: var(--size-xl);
-        }
-        
-        .about-main h2 {
-            margin-top: 0;
-        }
-        
-        .about-main {
-            flex: 1;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .about-text {
-            flex-grow: 1;
-        }
-
-        .about-text>* {
-            margin: 0 0 var(--size-3xs) 0;
-        }
-
-        /* Avatar */
-        .avatar {
-            width: var(--size-4xl);
-            height: var(--size-4xl);
-            border-radius: 50%;
-            flex-shrink: 0;
+        .header-link:hover {
+            color: var(--color-link);
         }
 
         /* Horizontal rules */
@@ -422,76 +376,6 @@
             margin: var(--size-lg) 0;
             border: 0;
             border-top: 1px solid var(--color-border);
-        }
-
-        /* Content sections */
-        .content-section {
-            margin-bottom: var(--size-xl);
-        }
-
-        /* Post items */
-        .post-items {
-            display: flex;
-            flex-direction: column;
-            gap: var(--size-sm);
-        }
-
-        .post-item-header {
-            display: flex;
-            align-items: baseline;
-        }
-
-        .post-date {
-            width: 7rem;
-            flex-shrink: 0;
-            color: var(--color-text-secondary);
-            line-height: 1.4;
-        }
-
-        .post-title {
-            text-decoration: none;
-            line-height: 1.4;
-        }
-
-        .post-description {
-            margin-top: var(--size-xxs);
-            color: var(--color-text-secondary);
-            line-height: 1.4;
-        }
-
-        /* About section */
-        .about-content {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .about-text {
-            flex-grow: 1;
-        }
-
-        .about-text>* {
-            margin: 0 0 var(--size-3xs) 0;
-        }
-
-        .about-contact {
-            display: flex;
-            flex-direction: column;
-            gap: var(--size-xs);
-        }
-
-        .contact-links {
-            display: flex;
-            gap: var(--size-md);
-            margin-top: var(--size-sm)
-        }
-
-        .contact-link {
-            text-decoration: none;
-            color: unset
-        }
-
-        .contact-link:hover {
-            text-decoration: underline;
         }
 
         /* Utility classes */
@@ -508,21 +392,17 @@
             text-decoration: none;
         }
 
-        .rss-link {
-            text-decoration: none;
-            color: inherit;
-            font-size: 1rem;
-            vertical-align: middle;
-        }
+    /* Header */
+    .header-text h1 {
+        margin: 0;
+        font-size: var(--size-lg);
+    }
 
-        .go-back-link {
-            margin-top: var(--size-xl);
-        }
-
-        .post-meta {
-            color: var(--color-text-secondary);
-            margin-bottom: var(--size-lg);
-        }
+    .header-text p {
+        margin: 0;
+        color: var(--color-text-secondary);
+    }
+    
     </style>
     <script>
         // Hide main content initially to prevent flicker
@@ -537,7 +417,7 @@
                     link.href = '#' + header.id;
                     link.className = 'header-link';
                     link.innerHTML = '#';
-                    link.title = 'Permalink to this section';
+                    link.title = 'is section';
                     header.appendChild(link);
                 }
             });
