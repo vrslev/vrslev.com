@@ -29,7 +29,21 @@
     .post-footer {
         margin-top: var(--size-lg);
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: var(--size-md);
+    }
+    
+    .post-footer > * {
+        white-space: nowrap;
+    }
+    
+    .post-footer > *:first-child {
+        flex: 1;
+    }
+    
+    .post-footer > *:last-child {
+        flex: 1;
+        text-align: right;
     }
 </style>
 
