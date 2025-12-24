@@ -6,7 +6,7 @@ extra.info_page = true
 
 Hi! I'm Lev Vereshchagin, a Software Developer.
 
-I specialize in Python development and build tools that make developers' lives easier. I enjoy automating routine tasks and improving workflows.
+I mostly write Python code, build tools and solutions that make developers' lives easier. I enjoy automating routine tasks and improving workflows.
 
 My professional focus is on backend development, creating reliable and maintainable systems, and contributing to open source projects.
 
