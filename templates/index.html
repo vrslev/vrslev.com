@@ -83,13 +83,16 @@
         text-decoration: none;
         color: inherit;
         font-size: 1rem;
-        vertical-align: middle;
+        transition: color 0.2s ease;
+        float: right;
+    }
+    .rss-link:hover {
+        color: var(--color-link);
     }
 </style>
 
 <h2>{% if lang == "ru" %}Посты{% else %}Posts{% endif %}
-    <a href="{% if lang == "ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed"
-        style="color: var(--color-text-secondary); font-size: 1rem; font-weight: normal; float: right;"><i
+    <a href="{% if lang == "ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed"><i
             class="fas fa-rss"></i></a>
 </h2>
 {% if lang == "ru" %}
