@@ -42,6 +42,7 @@
 <article>
     <h1 class="page-title">{{ page.title }}</h1>
     <div class="post-meta">
+        {% if page.date %}
         {% if lang == "ru" %}
         {% set english_days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
         {% set russian_days = ["понедельник", "вторник", "среда", "четверг", "пятница", "суббота", "воскресенье"] %}
@@ -54,6 +55,7 @@
         {{ page.date | date(format="%Y-%m-%d") }}, {{ russian_day }}
         {% else %}
         {{ page.date | date(format="%Y-%m-%d, %A") }}
+        {% endif %}
         {% endif %}
         {% set_global is_original = false %}
         {% set_global translation_type = "" %}
