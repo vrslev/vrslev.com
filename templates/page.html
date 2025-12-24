@@ -9,13 +9,14 @@
     .page-title {
         font-size: 2rem;
         margin-top: 0;
-        margin-bottom: var(--size-xs);
+        margin-bottom: 0;
         text-wrap: balance;
     }
 
     .post-meta {
         color: var(--color-text-secondary);
-        margin-bottom: var(--size-lg);
+        margin-top: var(--size-xs);
+        margin-bottom: var(--size-md);
         display: flex;
         flex-wrap: wrap;
     }
@@ -36,6 +37,10 @@
     .post-footer > *:first-child {
         flex: 1;
         white-space: nowrap;
+    }
+    
+    .page-content {
+        margin-top: var(--size-md);
     }
 </style>
 
@@ -116,8 +121,9 @@
         {% endif %}
     </div>
     {% endif %}
-
-    {{ page.content | safe }}
+    <div class="page-content">
+        {{ page.content | safe }}
+    </div>
 
     {% if not page.extra.info_page %}
     <div class="post-footer">
