@@ -41,6 +41,7 @@
 
 <article>
     <h1 class="page-title">{{ page.title }}</h1>
+    {% if not page.extra.info_page %}
     <div class="post-meta">
         {% if page.date %}
         {% if lang == "ru" %}
@@ -114,9 +115,11 @@
         {% endfor %}
         {% endif %}
     </div>
+    {% endif %}
 
     {{ page.content | safe }}
 
+    {% if not page.extra.info_page %}
     <div class="post-footer">
         <a href="{% if lang == "ru" %}/ru/{% else %}/{% endif %}" class="post-nav-link">← {% if lang == "ru"
             %}Главная{% else %}Home{% endif %}</a>
@@ -128,5 +131,6 @@
         </div>
         {% endif %}
     </div>
+    {% endif %}
 </article>
 {% endblock content %}

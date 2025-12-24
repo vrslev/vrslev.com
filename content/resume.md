@@ -1,6 +1,7 @@
 +++
 title = "Resume"
 description = "Professional experience and skills"
+extra.info_page = true
 +++
 
 Hi! I'm Lev Vereshchagin, Software Developer.
