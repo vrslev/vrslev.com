@@ -4,9 +4,9 @@ description = "Professional experience and skills"
 extra.info_page = true
 +++
 
-Hi! I'm Lev Vereshchagin, Software Developer.
+Hi! I'm Lev Vereshchagin, a Software Developer.
 
-I do Python development and build tools that make developers' lives easier. I enjoy automating routine tasks and improving workflows.
+I specialize in Python development and build tools that make developers' lives easier. I enjoy automating routine tasks and improving workflows.
 
 My professional focus is on backend development, creating reliable and maintainable systems, and contributing to open source projects.
 
