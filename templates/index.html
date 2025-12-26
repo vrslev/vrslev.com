@@ -89,6 +89,35 @@
     .rss-link:hover {
         color: var(--color-link);
     }
+
+    /* Site meta information */
+    .site-meta {
+        margin-top: var(--size-xs);
+        color: var(--color-text-secondary);
+        font-weight: normal;
+    }
+
+    .site-meta-first-line {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--size-xs);
+        align-items: center;
+        margin-bottom: var(--size-xxs);
+    }
+
+    .site-meta-link {
+        color: var(--color-link);
+        font-weight: normal;
+        text-decoration: none;
+    }
+
+    .site-meta-link:hover {
+        text-decoration: underline;
+    }
+
+    .site-meta-separator {
+        color: var(--color-text-secondary);
+    }
 </style>
 
 <h2>{% if lang == "ru" %}Посты{% else %}Posts{% endif %}
@@ -150,8 +179,23 @@
 
 <hr>
 
-<a href="{% if lang == "ru" %}/{% else %}/ru/{% endif %}"
-    style="display: block; color: var(--color-link); font-size: 1rem; font-weight: normal; margin-top: var(--size-md);">{% if lang ==
-    "ru" %}Read in English{% else %}Читать на русском{% endif %}</a>
+<div class="site-meta">
+    <div class="site-meta-first-line">
+        <a href="{% if lang == "ru" %}/{% else %}/ru/{% endif %}" class="site-meta-link">{% if lang ==
+            "ru" %}Read in English{% else %}Читать на русском{% endif %}</a>
+        <span class="site-meta-separator">·</span>
+        <a href="https://t.me/vrslev" class="site-meta-link">{% if lang == "ru" %}Телеграм канал{% else %}Telegram channel{% endif %}</a>
+        <span class="site-meta-separator">·</span>
+        <a href="https://github.com/vrslev/vrslev.com" class="site-meta-link">{% if lang == "ru" %}Исходный код{% else %}Source code{% endif %}</a>
+    </div>
+
+    <div>
+        {% if lang == "ru" %}
+            Персональные данные не собираются.
+        {% else %}
+            No personal data is collected.
+        {% endif %}
+    </div>
+</div>
 
 {% endblock content %}

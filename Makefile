@@ -4,7 +4,7 @@ build:
 	zola build
 
 serve:
-	tmux new-session -d -s zola-dev 'zola serve' || exit 0
+	tmux kill-session -t zola-dev; tmux new-session -d -s zola-dev 'zola serve --open' || exit 0
 
 check:
 	zola check
