@@ -1,5 +1,5 @@
-# Site Generation
-This site uses a Just-based workflow to manage Zola commands.
+## About the project
+This is a personal website built with Zola, a static site generator. Just for workflow management, and vanilla CSS, HTML, and JavaScript for the frontend. Posts are written in Markdown in both Russian and English.
 
 ## Available Commands
 `just --list` output:
