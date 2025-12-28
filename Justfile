@@ -1,13 +1,18 @@
+# Build the site to the `public/` directory
 build:
     zola build
 
+# Start a local development server with hot reloading
 serve:
     tmux kill-session -t zola-dev 2>/dev/null || true
     tmux new-session -d -s zola-dev 'zola serve --open' || exit 0
 
+# Check site for errors
 check:
     zola check
 
+# Create a new post with the given title
+# Usage: just post "Post Title"
 post title:
     #!/usr/bin/env bash
     TITLE="{{title}}"
