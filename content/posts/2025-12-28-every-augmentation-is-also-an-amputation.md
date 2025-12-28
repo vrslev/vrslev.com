@@ -1,5 +1,5 @@
 +++
-date = 2025-12-28T16:31:11+0300
+date = 2025-12-28T16:31:11+03:00
 title = "Every augmentation is also an amputation"
 taxonomies.tags = ["original-lang"]
 +++

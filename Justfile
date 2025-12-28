@@ -44,9 +44,11 @@ post lang title:
     fi
     echo "Creating new $POST_TYPE post: $FILE"
 
+    # Format date with colon in timezone offset for TOML compatibility
+    DATE_FORMATTED=$(date +%Y-%m-%dT%H:%M:%S%z | sed 's/\([+-][0-9]\{2\}\)\([0-9]\{2\}\)/\1:\2/')
     {
         echo "+++"
-        echo "date = $(date +%Y-%m-%dT%H:%M:%S%z)"
+        echo "date = $DATE_FORMATTED"
         echo "title = \"$TITLE\""
         echo "taxonomies.tags = $TAGS"
         echo "+++"
