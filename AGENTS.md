@@ -23,5 +23,5 @@ During development, use `just serve` once to start a local server that automatic
 - No need to manually rebuild after each change when using `just serve` - changes are automatically detected and the site is rebuilt. The development server provides hot reloading, instantly reflecting changes in the browser
 - Only run `just build` to check if build is ok or check the resulting html
 - Use CSS selectors over inline styles for better maintainability and consistency
-
-The Justfile provides a simple interface to Zola commands, ensuring consistent usage across different environments.
+- Use content tags conservatively
+- The Justfile provides a simple interface to Zola commands, ensuring consistent usage across different environments.
