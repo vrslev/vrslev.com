@@ -1,7 +1,7 @@
 +++
 date = 2025-12-28T16:31:11+0300
 title = "Every augmentation is also an amputation"
-taxonomies.tags = []
+taxonomies.tags = ["original-lang"]
 +++
 
 Most technology is a double-edged sword:
