@@ -4,7 +4,7 @@ build:
 
 # Minify the site in `public/`
 minify:
-    minify-html --keep-closing-tags --minify-js --minify-css public/**/*.html
+    minify-html --keep-closing-tags --minify-js --minify-css $(find public -name "*.html" | tr '\n' ' ')
 
 # Start a local development server with hot reloading
 serve:
