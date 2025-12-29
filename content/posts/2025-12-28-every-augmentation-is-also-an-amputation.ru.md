@@ -8,4 +8,4 @@ taxonomies.tags = ["human-translation"]
 
 > Говоря о влиянии технологий на отдельного человека и общество в целом, **любая аугментация — это одновременно и ампутация**.
 
-— [Нил Стивенсон](https://nealstephenson.substack.com/p/remarks-on-ai-from-nz), «Заметки об ИИ из Новой Зеландии» (via [Саймон Уиллисон](https://simonwillison.net/2025/May/18/neal-stephenson/#atom-everything))
+— [Нил Стивенсон](https://nealstephenson.substack.com/p/remarks-on-ai-from-nz), «Заметки об ИИ из Новой Зеландии» (via [Саймон Уиллисон](https://simonwillison.net/2025/May/18/neal-stephenson/))
