@@ -129,7 +129,8 @@
     }
 </style>
 
-<h2>{% if lang == "ru" %}Посты{% else %}Posts{% endif %}
+<section aria-labelledby="posts-heading">
+<h2 id="posts-heading">{% if lang == "ru" %}Посты{% else %}Posts{% endif %}
     <a href="{% if lang == "ru" %}/ru{% endif %}/atom.xml" class="rss-link" title="RSS Feed"><i
             class="fas fa-rss"></i></a>
 </h2>
@@ -151,14 +152,14 @@
     </div>
     {% endfor %}
 </div>
+</section>
 
 <hr>
 
-
-
+<section aria-labelledby="about-heading">
 <div class="about-section">
     <div>
-        <h2>{% if lang == "ru" %}Обо мне{% else %}About me{% endif %}</h2>
+        <h2 id="about-heading">{% if lang == "ru" %}Обо мне{% else %}About me{% endif %}</h2>
         <div>
             <p>{% if lang == "ru" %}Привет! Я Лев Верещагин, разработчик.{% else %}Hi! I'm Lev Vereshchagin,
                 Software
@@ -168,7 +169,7 @@
                 разработчикам. Мне нравится автоматизировать рутинные задачи и улучшать рабочие процессы. (<a href="/ru/resume/">Резюме</a>){% else %}I
                 do Python development and build tools that make developers' lives easier. I enjoy automating routine
                 tasks and improving workflows. (<a href="/resume/">Resume</a>){% endif %}</p>
-            <div class="contact-links">
+            <nav aria-label="Contact links" class="contact-links">
                 <a href="https://github.com/vrslev" title="GitHub" aria-label="GitHub" class="contact-link">
                     <i class="fa-brands fa-github fa-2x"></i>
                 </a>
@@ -178,17 +179,18 @@
                 <a href="mailto:mail@vrslev.com" title="Mail" aria-label="Mail" class="contact-link">
                     <i class="fa-regular fa-envelope fa-2x"></i>
                 </a>
-            </div>
+            </nav>
         </div>
     </div>
     <img src="https://avatars.githubusercontent.com/u/75225148" alt="{% if lang == "ru" %}Аватар{% else
         %}Avatar{% endif %}" class="avatar" loading="lazy" style="margin: 0;">
     </div>
 </div>
+</section>
 
 <hr>
 
-<div class="site-meta">
+<nav aria-label="Site navigation" class="site-meta">
     <div class="site-meta-first-line">
         <a href="{% if lang == "ru" %}/{% else %}/ru/{% endif %}" class="site-meta-link"><i class="fas fa-language site-meta-icon"></i>{% if lang ==
             "ru" %}Read in English{% else %}Читать на русском{% endif %}</a>
@@ -205,6 +207,6 @@
             No personal data is collected.
         {% endif %}
     </div>
-</div>
+</nav>
 
 {% endblock content %}

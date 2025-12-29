@@ -164,7 +164,7 @@
     </div>
 
     {% if not page.extra.info_page %}
-    <div class="post-footer">
+    <nav aria-label="Post navigation" class="post-footer">
         <a href="{% if lang == "ru" %}/ru/{% else %}/{% endif %}" class="post-nav-link">← {% if lang == "ru"
             %}Главная{% else %}Home{% endif %}</a>
         {% if page.higher %}
@@ -174,7 +174,7 @@
             </a>
         </div>
         {% endif %}
-    </div>
+    </nav>
     {% endif %}
 </article>
 {% endblock content %}
