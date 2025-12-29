@@ -5,7 +5,11 @@ build:
 # Start a local development server with hot reloading
 serve:
     tmux kill-session -t zola-dev 2>/dev/null || true
-    tmux new-session -d -s zola-dev 'zola serve --open' || exit 0
+    tmux new-session -d -s zola-dev 'zola serve' || exit 0
+
+# Open in browser
+open:
+    open http://localhost:1111/
 
 # Check site for errors
 check:

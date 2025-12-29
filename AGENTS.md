@@ -13,7 +13,7 @@ Available recipes:
 ```
 
 ## Workflow
-- Start local server with `just serve`: it'll automatically rebuild the site and refresh the browser when files change
+- Start local server with `just serve` ONLY ONCE: it'll automatically rebuild the site and refresh the browser when files change
 - No need to manually rebuild after each change - changes are automatically detected and the site is rebuilt. Only run `just build` to check if build is ok or check the resulting html
 - Create bilingual posts with `just post en "Title"` for English (original) or `just post ru "Заголовок"` for Russian (translation)
 
