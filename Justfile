@@ -4,7 +4,7 @@ build:
 
 # Minify the site in `public/`
 minify:
-    mise x cargo:minhtml -- minhtml --keep-closing-tags --minify-js --minify-css public/**/*.html
+    minify-html --keep-closing-tags --minify-js --minify-css public/**/*.html
 
 # Start a local development server with hot reloading
 serve:

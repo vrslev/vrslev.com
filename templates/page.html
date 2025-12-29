@@ -377,35 +377,8 @@
 {% block page_structured_data %}
 {% if not page.extra.info_page %}
 <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{ page.permalink | safe }}"
-    },
-    "headline": "{{ page.title | escape }}",
-    {% if page.description %}
-    "description": "{{ page.description | escape }}",
-    {% endif %}
-    "datePublished": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}",
-    {% if page.updated %}
-    "dateModified": "{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S%:z') }}",
-    {% else %}
-    "dateModified": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}",
-    {% endif %}
-    "author": {
-        "@type": "Person",
-        "name": "Lev Vereshchagin",
-        "url": "https://vrslev.com"
-    },
-    "publisher": {
-        "@type": "Person",
-        "name": "Lev Vereshchagin",
-        "url": "https://vrslev.com"
-    },
-    "articleBody": "{{ page.content | striptags | escape | truncate(length=200) }}"
-}
+{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"{{ page.permalink | safe }}"},"headline":"{{ page.title | escape }}","datePublished":"{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}","dateModified":"{% if page.updated %}{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S%:z') }}{% else %}{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}{% endif %}","author":{"@type":"Person","name":"Lev Vereshchagin","url":"https://vrslev.com"},"publisher":{"@type":"Person","name":"Lev Vereshchagin","url":"https://vrslev.com"},"articleBody":"{{ page.content | striptags | escape | truncate(length=200) }}"}{% if page.description %}
+,"description":"{{ page.description | escape }}"{% endif %}
 </script>
 {% endif %}
 {% endblock page_structured_data %}

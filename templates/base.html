@@ -489,42 +489,11 @@
 
     <!-- Speculation Rules for faster navigation -->
     <script type="speculationrules">
-        {
-            "prerender": [{
-                "where": {
-                    "and": [
-                        {"href_matches": "/*"},
-                        {"not": {"selector_matches": "[target]"}}
-                    ]
-                },
-                "eagerness": "moderate"
-            }],
-            "prefetch": [{
-                "where": {
-                    "href_matches": "/*"
-                },
-                "eagerness": "eager"
-            }]
-        }
+{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[target]"}}]},"eagerness":"moderate"}],"prefetch":[{"where":{"href_matches":"/*"},"eagerness":"eager"}]}
     </script>
     {% block structured_data %}
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "{% if lang == 'ru' %}Лев Верещагин{% else %}Lev Vereshchagin{% endif %}",
-        "url": "{{ config.base_url }}{% if lang != config.default_language %}/{{ lang }}/{% endif %}",
-        "description": "Lev Vereshchagin's personal website",
-        "author": {
-            "@type": "Person",
-            "name": "Lev Vereshchagin",
-            "url": "{{ config.base_url }}",
-            "sameAs": [
-                "https://github.com/vrslev",
-                "https://t.me/vrslev"
-            ]
-        }
-    }
+{"@context":"https://schema.org","@type":"WebSite","name":"{% if lang == 'ru' %}Лев Верещагин{% else %}Lev Vereshchagin{% endif %}","url":"{{ config.base_url }}{% if lang != config.default_language %}/{{ lang }}/{% endif %}","description":"Lev Vereshchagin's personal website","author":{"@type":"Person","name":"Lev Vereshchagin","url":"{{ config.base_url }}","sameAs":["https://github.com/vrslev","https://t.me/vrslev"]}}
     </script>
     {% endblock structured_data %}
 </head>
