@@ -8,6 +8,8 @@ This is a personal website built with Zola, a static site generator. Just for wo
 Available recipes:
     build           # Build the site to the `public/` directory
     check           # Check site for errors
+    minify          # Minify the site in `public/`
+    open            # Open in browser
     post lang title # Create bilingual posts: just post en "Post Title" (English/original) or just post ru "Заголовок поста" (Russian/translation)
     serve           # Start a local development server with hot reloading
 ```
