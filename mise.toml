@@ -1,3 +1,4 @@
 [tools]
+just = "latest"
 "ubi:wilsonzlin/minify-html" = "latest"
 zola = "latest"
