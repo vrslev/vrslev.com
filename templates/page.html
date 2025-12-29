@@ -2,6 +2,8 @@
 
 {% block title %}{{ page.title }} | {{ super() }}{% endblock title %}
 
+{% block meta_description %}{% if page.description %}{{ page.description }}{% else %}Lev Vereshchagin's personal website{% endif %}{% endblock meta_description %}
+
 {% block content %}
 <link rel="stylesheet" type="text/css" href="/syntax-theme-light.css" media="(prefers-color-scheme: light)" />
 <link rel="stylesheet" type="text/css" href="/syntax-theme-dark.css" media="(prefers-color-scheme: dark)" />
@@ -33,16 +35,52 @@
         row-gap: var(--size-sm);
         text-wrap: balance;
     }
-    
+
     .post-footer > *:first-child {
         flex: 1;
         white-space: nowrap;
     }
-    
+
     .page-content {
         margin-top: var(--size-md);
     }
 </style>
+{% block page_structured_data %}
+{% if not page.extra.info_page %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.permalink | safe }}"
+    },
+    "headline": "{{ page.title | escape }}",
+    {% if page.description %}
+    "description": "{{ page.description | escape }}",
+    {% endif %}
+    "datePublished": "{{ page.date | date(format='%Y-%m-%d') }}",
+    {% if page.updated %}
+    "dateModified": "{{ page.updated | date(format='%Y-%m-%d') }}",
+    {% else %}
+    "dateModified": "{{ page.date | date(format='%Y-%m-%d') }}",
+    {% endif %}
+    "author": {
+        "@type": "Person",
+        "name": "Lev Vereshchagin"
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Lev Vereshchagin"
+    },
+    {% if page.taxonomies.tags %}
+    "keywords": [{% for tag in page.taxonomies.tags %}"{{ tag }}"{% if not loop.last %}, {% endif %}{% endfor %}],
+    {% endif %}
+    "articleBody": "{{ page.content | striptags | escape | truncate(length=200) }}"
+}
+</script>
+{% endif %}
+{% endblock page_structured_data %}
 
 <article>
     <h1 class="page-title">{{ page.title }}</h1>
