@@ -59,23 +59,22 @@
     {% if page.description %}
     "description": "{{ page.description | escape }}",
     {% endif %}
-    "datePublished": "{{ page.date | date(format='%Y-%m-%d') }}",
+    "datePublished": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}",
     {% if page.updated %}
-    "dateModified": "{{ page.updated | date(format='%Y-%m-%d') }}",
+    "dateModified": "{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S%:z') }}",
     {% else %}
-    "dateModified": "{{ page.date | date(format='%Y-%m-%d') }}",
+    "dateModified": "{{ page.date | date(format='%Y-%m-%dT%H:%M:%S%:z') }}",
     {% endif %}
     "author": {
         "@type": "Person",
-        "name": "Lev Vereshchagin"
+        "name": "Lev Vereshchagin",
+        "url": "https://vrslev.com"
     },
     "publisher": {
         "@type": "Person",
-        "name": "Lev Vereshchagin"
+        "name": "Lev Vereshchagin",
+        "url": "https://vrslev.com"
     },
-    {% if page.taxonomies.tags %}
-    "keywords": [{% for tag in page.taxonomies.tags %}"{{ tag }}"{% if not loop.last %}, {% endif %}{% endfor %}],
-    {% endif %}
     "articleBody": "{{ page.content | striptags | escape | truncate(length=200) }}"
 }
 </script>
