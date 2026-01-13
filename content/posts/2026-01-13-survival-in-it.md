@@ -8,8 +8,8 @@ Specialists earn more than manual workers at the cost of fragility and the risk 
 
 > [...] a specialist has acquired a lot of specialized knowledge at a cheap unit cost in order to be competitive. However, given the low unit cost, this knowledge is not a solid basis for further professional growth; rather, it's expendable. The means to survival for a specialist is his ability to rapidly learn new subjects, quickly produce saleable works, and then move on. This is called skimming. It's the same strategy pursued by weeds, to use an ecological analogy. At the expert level (see Gauging mastery), a person needs 80-100 hours a week to stay competitive. For masters level, it's 60-80 hours, and to remain competent requires 40-60 hours a week.
 
-— Jacob Lund Fisker, book "Early Retirement Extreme"
-
+_— Jacob Lund Fisker, book "Early Retirement Extreme"_
+<br /><br />
 To remain competitive in IT, you clearly don't need 80–100 hours per week—that's overkill. But the general message is quite interesting (even if somewhat clichéd).
 
 How not to end up in a bad position? Overall, the advice is also quite clichéd, here's what ChatGPT says:
