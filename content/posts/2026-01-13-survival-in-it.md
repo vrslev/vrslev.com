@@ -32,12 +32,13 @@ How not to end up in a bad position? Overall, the advice is also quite clichéd,
 >
 > 6. Survival strategy — meta-skills.
 > It's more valuable not to "know Django," but to be able to:
-> - learn quickly
-> - think architecturally
-> - understand system principles
-> - effectively use AI tools
-> - develop soft skills
-> These are things that become obsolete the slowest.
+>    - learn quickly
+>    - think architecturally
+>    - understand system principles
+>    - effectively use AI tools
+>    - develop soft skills
+>
+>    These are things that become obsolete the slowest.
 >
 > 7. IT is essentially about adaptation.
 > A developer is successful when not tied to a tool, but able to solve problems and switch between technologies without pain.
