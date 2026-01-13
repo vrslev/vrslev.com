@@ -6,7 +6,7 @@ taxonomies.tags = ["original-lang"]
 
 Специалисты зарабатывают больше работяг ценой хрупкости и риска перестать быть конкурентно способным:
 
-> In other words, a specialist has acquired a lot of specialized knowledge at a cheap unit cost in order to be competitive. However, given the low unit cost, this knowledge is not a solid basis for further professional growth; rather, it's expendable. The means to survival for a specialist is his ability to rapidly learn new subjects, quickly produce saleable works, and then move on. This is called skimming. It's the same strategy pursued by weeds, to use an ecological analogy. At the expert level (see Gauging mastery), a person needs 80-100 hours a week to stay competitive. For masters level, it's 60-80 hours, and to remain competent requires 40-60 hours a week.
+> [...] специалист приобрел много специализированных знаний по низкой себестоимости, чтобы быть конкурентоспособным. Однако, учитывая низкую себестоимость, эти знания не являются надежной основой для дальнейшего профессионального роста; скорее, они одноразовые. Средство выживания для специалиста — это его способность быстро осваивать новые темы, быстро создавать товарную продукцию и затем переходить к следующему. Это называется поверхностным изучением (skimming). Это та же стратегия, которой придерживаются сорняки, если использовать экологическую аналогию. На уровне эксперта, человеку требуется 80–100 часов в неделю, чтобы оставаться конкурентоспособным. Для уровня мастеров это 60–80 часов, а для сохранения компетентности требуется 40–60 часов в неделю.
 
 — Fisker, книга "Early Retirement Extreme" book
 
