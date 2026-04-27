@@ -58,4 +58,4 @@ Total: 95.69% → 95.69% (+0.00)
 
 Из похожего есть [`diff-cover`](https://github.com/Bachmann1234/diff_cover), но он показывает покрытие только для строк, изменённых в git diff. Мне же нужно сравнивать покрытие до и после, когда меняется сам код.
 
-Исходный: [github.com/vrslev/cmp-cov](https://github.com/vrslev/cmp-cov). Попробовать можно так: `uvx cmp-cov save-baseline`, поменяйте код, затем `uvx cmp-cov diff`.
+Исходный код: [github.com/vrslev/cmp-cov](https://github.com/vrslev/cmp-cov). Попробовать можно так: `uvx cmp-cov save-baseline`, поменяйте код, затем `uvx cmp-cov diff`.
