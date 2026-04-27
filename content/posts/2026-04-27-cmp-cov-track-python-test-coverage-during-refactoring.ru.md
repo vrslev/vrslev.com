@@ -29,16 +29,18 @@ taxonomies.tags = ["original-lang"]
 
 ```shell
 ❯ uv run pytest --cov && uvx cmp-cov save-baseline
-...<pytest output>...
+#...pytest output...
 Saved baseline 'default' for /Users/lev/web/chat/bot/front
   path:    /Users/lev/.cache/cmp-coverage/%2FUsers%2Flev%2Fweb%2Fchat%2Fbot%2Ffront/default/coverage.xml
   sources: 85 files in /Users/lev/.cache/cmp-coverage/%2FUsers%2Flev%2Fweb%2Fchat%2Fbot%2Ffront/default/sources
   total:   95.69%
+```
 
-# Добавил тест, запустил заново — на этот раз c командой `diff`
+Добавил тест, запустил заново — на этот раз c командой `diff`:
 
+```shell
 ❯ uv run pytest --cov && uvx cmp-cov diff
-...<pytest output>...
+#...pytest output...
 Project:  /Users/lev/web/chat/bot/front
 Baseline: 'default' (/Users/lev/.cache/cmp-coverage/%2FUsers%2Flev%2Fweb%2Fchat%2Fbot%2Ffront/default/coverage.xml)
 Saved:    2026-04-27 17:16:58

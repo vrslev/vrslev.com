@@ -20,9 +20,12 @@ taxonomies = [
 ]
 
 [markdown]
-highlight_code = true
-highlight_theme = "css"
 external_links_target_blank = true
 lazy_async_image = true
 bottom_footnotes = true
 insert_anchor_links = "right"
+
+[markdown.highlighting]
+style = "class"
+theme = "github-light"
+error_on_missing_language = true

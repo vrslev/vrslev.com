@@ -29,16 +29,18 @@ To make such checks easier and more humane, I wrote a tool — [cmp-cov](https:/
 
 ```shell
 ❯ uv run pytest --cov && uvx cmp-cov save-baseline
-...<pytest output>...
+#...pytest output...
 Saved baseline 'default' for /Users/lev/web/chat/bot/front
   path:    /Users/lev/.cache/cmp-coverage/%2FUsers%2Flev%2Fweb%2Fchat%2Fbot%2Ffront/default/coverage.xml
   sources: 85 files in /Users/lev/.cache/cmp-coverage/%2FUsers%2Flev%2Fweb%2Fchat%2Fbot%2Ffront/default/sources
   total:   95.69%
+```
 
-# Add new test, and run again, this time diff.
+Add new test, and run again, this time diff:
 
+```shell
 ❯ uv run pytest --cov && uvx cmp-cov diff
-...<pytest output>...
+#...pytest output...
 Project:  /Users/lev/web/chat/bot/front
 Baseline: 'default' (/Users/lev/.cache/cmp-coverage/%2FUsers%2Flev%2Fweb%2Fchat%2Fbot%2Ffront/default/coverage.xml)
 Saved:    2026-04-27 17:16:58
