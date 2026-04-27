@@ -1,10 +1,10 @@
 +++
 date = 2026-04-27T17:23:00+03:00
-title = "cmp-cov: Трекаем покрытие Python-кода во время рефакторинга"
-taxonomies.tags = ["original-lang"]
+title = "cmp-cov: Track Python test coverage during refactoring"
+taxonomies.tags = ["ai-translation"]
 +++
 
-Когда покрытие кода тестами не 100%, при рефакторинге сложно отслеживать его изменения. Раньше я либо забивал на это, либо копировал секцию с покрытием и сравнивал дифф вручную в VS Code. Вот такие диффы приходилось отсматривать (тут я добавил всего один тест!):
+When test coverage isn't 100%, it's hard to track how it changes during refactoring. I used to either ignore it or copy the coverage section and diff it by hand in VS Code. Diffs like this had to be eyeballed (and I only added a single test here!):
 
 
 ```diff
@@ -25,7 +25,7 @@ taxonomies.tags = ["original-lang"]
 
 ```
 
-Чтобы сделать такие проверки проще и человечнее, написал утилиту [cmp-cov](https://github.com/vrslev/cmp-cov). Она сравнивает текущее покрытие с сохранённым baseline. Пример использования:
+To make such checks easier and more humane, I wrote a tool — [cmp-cov](https://github.com/vrslev/cmp-cov). It compares the current coverage against a saved baseline. Example usage:
 
 ```shell
 ❯ uv run pytest --cov && uvx cmp-cov save-baseline
@@ -52,8 +52,8 @@ Total: 95.69% → 95.69% (+0.00)
   tests/api/test_system.py:7-10
 ```
 
-Теперь ясно видно, что изменилось в покрытии.
+Now it's clear what changed in coverage.
 
-Из похожего есть [`diff-cover`](https://github.com/Bachmann1234/diff_cover), но он показывает покрытие только для строк, изменённых в git diff. Мне же нужно сравнивать покрытие до и после, когда меняется сам код.
+There's a similar tool, [`diff-cover`](https://github.com/Bachmann1234/diff_cover), but it only shows coverage for lines changed in a git diff. I needed to compare coverage before and after, as the code itself changes.
 
-Исходный: [github.com/vrslev/cmp-cov](https://github.com/vrslev/cmp-cov). Попробовать можно так: `uvx cmp-cov save-baseline`, поменяйте код, затем `uvx cmp-cov diff`.
+Source code: [github.com/vrslev/cmp-cov](https://github.com/vrslev/cmp-cov). You can try it this way: `uvx cmp-cov save-baseline`, change some code, then `uvx cmp-cov diff`.
