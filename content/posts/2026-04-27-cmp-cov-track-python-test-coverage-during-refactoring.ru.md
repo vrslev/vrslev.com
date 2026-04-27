@@ -35,7 +35,7 @@ Saved baseline 'default' for /Users/lev/web/chat/bot/front
   sources: 85 files in /Users/lev/.cache/cmp-coverage/%2FUsers%2Flev%2Fweb%2Fchat%2Fbot%2Ffront/default/sources
   total:   95.69%
 
-# Add new test, and run again, this time diff.
+# Добавил тест, запустил заново — на этот раз c командой `diff`
 
 ❯ uv run pytest --cov && uvx cmp-cov diff
 ...<pytest output>...
