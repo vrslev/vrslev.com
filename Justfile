@@ -41,7 +41,7 @@ post lang title:
         # Simple transliteration for Russian characters in slug
         SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/а/a/g' | sed 's/б/b/g' | sed 's/в/v/g' | sed 's/г/g/g' | sed 's/д/d/g' | sed 's/е/e/g' | sed 's/ё/e/g' | sed 's/ж/j/g' | sed 's/з/z/g' | sed 's/и/i/g' | sed 's/й/i/g' | sed 's/к/k/g' | sed 's/л/l/g' | sed 's/м/m/g' | sed 's/н/n/g' | sed 's/о/o/g' | sed 's/п/p/g' | sed 's/р/r/g' | sed 's/с/s/g' | sed 's/т/t/g' | sed 's/у/u/g' | sed 's/ф/f/g' | sed 's/х/h/g' | sed 's/ц/c/g' | sed 's/ч/ch/g' | sed 's/ш/sh/g' | sed 's/щ/sh/g' | sed 's/ъ/ie/g' | sed 's/ы/y/g' | sed 's/ь/~/g' | sed 's/э/e/g' | sed 's/ю/yu/g' | sed 's/я/ya/g' | sed 's/[^a-zA-Z0-9]/-/g' | sed 's/--*/-/g' | sed 's/^-//' | sed 's/-*$//')
         FILE="content/posts/$(date +%Y-%m-%d)-$SLUG.ru.md"
-        TAGS="[\"human-translation\"]"
+        TAGS="[\"original-lang\"]"
         TRANSLATION_FILE="content/posts/$(date +%Y-%m-%d)-$SLUG.md"
         POST_TYPE="Russian"
     fi
