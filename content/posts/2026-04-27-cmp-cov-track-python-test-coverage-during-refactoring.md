@@ -4,7 +4,7 @@ title = "cmp-cov: Track Python test coverage during refactoring"
 taxonomies.tags = ["ai-translation"]
 +++
 
-When test coverage isn't 100%, it's hard to track how it changes during refactoring. I used to either ignore it or copy the coverage section and diff it by hand in VS Code. Diffs like this had to be eyeballed (and I only added a single test here!):
+When test coverage isn't 100%, it's hard to track how it changes during refactoring. I used to either ignore it or copy the coverage section and diff it by hand in VS Code. Diffs like this had to be eyeballed (and I only added a single test here! — this is a toy example):
 
 
 ```diff
