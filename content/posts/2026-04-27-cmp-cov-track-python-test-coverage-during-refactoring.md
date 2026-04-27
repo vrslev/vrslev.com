@@ -58,4 +58,8 @@ Now it's clear what changed in coverage.
 
 There's a similar tool, [`diff-cover`](https://github.com/Bachmann1234/diff_cover), but it only shows coverage for lines changed in a git diff. I needed to compare coverage before and after, as the code itself changes.
 
-Source code: [github.com/vrslev/cmp-cov](https://github.com/vrslev/cmp-cov). You can try it this way: `uvx cmp-cov save-baseline`, change some code, then `uvx cmp-cov diff`.
+---
+
+Source code: [github.com/vrslev/cmp-cov](https://github.com/vrslev/cmp-cov).
+
+You can try it this way: `uvx cmp-cov save-baseline`, change some code, then `uvx cmp-cov diff`.
