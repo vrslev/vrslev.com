@@ -26,6 +26,6 @@ bottom_footnotes = true
 insert_anchor_links = "right"
 
 [markdown.highlighting]
-style = "class"
-theme = "github-light"
+light_theme = "github-light"
+dark_theme = "github-dark"
 error_on_missing_language = true
